@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Employee Portal</title>
+
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:#101a33;
+      --text:#eaf0ff;
+      --muted:#b8c4e6;
+      --line:rgba(255,255,255,.12);
+      --danger:#ff6b6b;
+      --accent:#7aa2ff;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:16px;
+      --max:1100px;
+      --pad:18px;
+      --pad2:24px;
+      --font: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 600px at 20% -10%, rgba(122,162,255,.25), transparent 60%),
+        radial-gradient(1000px 500px at 80% 0%, rgba(92,242,194,.18), transparent 55%),
+        var(--bg);
+    }
+
+    .container{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 var(--pad);
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(10px);
+      background:rgba(11,18,32,.75);
+      border-bottom:1px solid var(--line);
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand strong{
+      display:block;
+      font-size:16px;
+    }
+
+    .brand span{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+    }
+
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      background:rgba(255,255,255,.1);
+    }
+
+    .btn.danger{
+      background:rgba(255,107,107,.15);
+      border-color:rgba(255,107,107,.4);
+    }
+
+    .btn.primary{
+      background:linear-gradient(135deg, rgba(122,162,255,.95), rgba(92,242,194,.75));
+      border:none;
+      color:#071023;
+    }
+
+    .hero{
+      padding:26px 0 10px;
+    }
+
+    .hero h1{
+      margin:0 0 8px;
+      font-size:26px;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      max-width:85ch;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(12,1fr);
+      gap:14px;
+      padding:18px 0 26px;
+    }
+
+    .card{
+      grid-column:span 12;
+      background:linear-gradient(180deg, rgba(16,26,51,.9), rgba(14,23,48,.9));
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:var(--pad2);
+    }
+
+    .company-grid .card{
+      grid-column:span 6;
+      padding:18px;
+    }
+
+    @media(max-width:860px){
+      .company-grid .card{grid-column:span 12;}
+    }
+
+    .company-title{
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+    }
+
+    .company-title h3{
+      margin:0;
+      font-size:18px;
+    }
+
+    .company-title p{
+      margin:6px 0 0;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .actions{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:14px;
+    }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:12px 0 16px;
+    }
+
+    details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      padding:12px 14px;
+      background:rgba(255,255,255,.04);
+      margin-bottom:10px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+    }
+
+    summary::-webkit-details-marker{display:none}
+
+    ul{
+      margin:10px 0 0;
+      padding-left:18px;
+      color:var(--muted);
+      line-height:1.6;
+    }
+
+    ul a{
+      color:var(--text);
+      text-decoration:underline;
+    }
+
+    .footer{
+      padding:10px 0 30px;
+      color:var(--muted);
+      font-size:12px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <strong>Employee Portal</strong>
+        <span>Complaints • Policies • Documents</span>
+      </div>
+      <nav>
+        <a class="btn" href="#companies">Companies</a>
+        <a class="btn danger" href="#complaints">Submit Complaint</a>
+        <a class="btn" href="#employment">Employment Info</a>
+        <a class="btn" href="#documents">Documents</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="hero">
+    <h1>Welcome</h1>
+    <p>
+      This portal provides employees access to submit complaints, review employment policies,
+      and download required documents. Internal use only.
+    </p>
+  </div>
+
+  <!-- COMPANIES -->
+  <section id="companies" class="grid company-grid">
+    <div class="card">
+      <div class="company-title">
+        <div>
+          <h3>Archibald’s</h3>
+          <p>Restaurant employee resources</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn danger" href="#complaints">Submit Complaint</a>
+        <a class="btn" href="#documents">Documents</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="company-title">
+        <div>
+          <h3>Andy’s Xpress Wash</h3>
+          <p>Car wash employee resources</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn danger" href="#complaints">Submit Complaint</a>
+        <a class="btn" href="#documents">Documents</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="company-title">
+        <div>
+          <h3>Parkcrest Properties</h3>
+          <p>Corporate employee resources</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn danger" href="#complaints">Submit Complaint</a>
+        <a class="btn" href="#documents">Documents</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="company-title">
+        <div>
+          <h3>AMPM</h3>
+          <p>Store employee resources</p>
+        </div>
+      </div>
+      <div class="actions">
+        <a class="btn danger" href="#complaints">Submit Complaint</a>
+        <a class="btn" href="#documents">Documents</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMPLAINTS -->
+  <section id="complaints" class="grid">
+    <div class="card">
+      <h2>Submit an Employee Complaint</h2>
+      <p style="color:var(--muted)">
+        Complaint form coming soon. This will be securely handled through Pristo
+        and sent to <strong>wecare@parkcrestinc.com</strong>.
+      </p>
+      <div class="divider"></div>
+      <a class="btn danger">Complaint Form Coming Soon</a>
+    </div>
+  </section>
+
+  <!-- EMPLOYMENT INFO -->
+  <section id="employment" class="grid">
+    <div class="card">
+      <h2>Employment Information</h2>
+      <div class="divider"></div>
+
+      <details open>
+        <summary>Sick Hours Policy</summary>
+        <p style="color:var(--muted)">
+          Sick hours policy information will be listed here.
+        </p>
+      </details>
+
+      <details>
+        <summary>Benefits Overview</summary>
+        <p style="color:var(--muted)">
+          Benefits eligibility and enrollment information will be listed here.
+        </p>
+      </details>
+    </div>
+  </section>
+
+<!-- DOCUMENTS -->
+<section id="documents" class="grid">
+  <div class="card">
+    <h2>Documents Library</h2>
+    <p style="color:var(--muted)">
+      Click any document below to download directly.
+    </p>
+    <div class="divider"></div>
+
+    <!-- EMPLOYEE INFORMATION -->
+    <details open>
+      <summary>Employee Information</summary>
+      <ul>
+        <li>
+          <a href="documents/Know-Your-Rights-Notice-English.pdf" download>
+            California Know Your Rights (English)
+          </a>
+        </li>
+        <li>
+          <a href="documents/Know-Your-Rights-Notice-Spanish.pdf" download>
+            California Know Your Rights (Spanish)
+          </a>
+        </li>
+        <li>
+          <a href="documents/CA Paid Family Leave.pdf" download>
+            CA Paid Family Leave
+          </a>
+        </li>
+        <li>
+          <a href="documents/CA Family Rights Act.pdf" download>
+            CA Family Rights Act
+          </a>
+        </li>
+        <li>
+          <a href="documents/Sexual Harassment Fact Sheet.pdf" download>
+            Sexual Harassment Fact Sheet
+          </a>
+        </li>
+      </ul>
+    </details>
+
+    <!-- TAX FORMS -->
+    <details>
+      <summary>Tax Forms</summary>
+      <ul>
+        <li>
+          <a href="documents/W4 2026.pdf" download>
+            W-4 (English)
+          </a>
+        </li>
+        <li>
+          <a href="documents/W4 2026 - Spanish.pdf" download>
+            W-4 (Spanish)
+          </a>
+        </li>
+        <li>
+          <a href="documents/i-9.pdf" download>
+            I-9 (English)
+          </a>
+        </li>
+        <li>
+          <a href="documents/i-9 Spanish.pdf" download>
+            I-9 (Spanish)
+          </a>
+        </li>
+        <li>
+          <a href="documents/EDD4 2026.pdf" download>
+            EDD4 (English)
+          </a>
+        </li>
+        <li>
+          <a href="documents/EDD4 2026 - Spanish.pdf" download>
+            EDD4 (Spanish)
+          </a>
+        </li>
+      </ul>
+    </details>
+
+    <!-- EMPLOYEE BENEFITS -->
+    <details>
+      <summary>Employee Benefits (CalSavers)</summary>
+      <ul>
+        <li>
+          <a href="documents/Cal Saver Employee Benefit.pdf" download>
+            CalSavers Employee Benefits
+          </a>
+        </li>
+        <li>
+          <a href="documents/Cal Savers Program Disclosure.pdf" download>
+            CalSavers Program Disclosure
+          </a>
+        </li>
+        <li>
+          <a href="documents/Cal Savers overview.pdf" download>
+            CalSavers Overview
+          </a>
+        </li>
+      </ul>
+    </details>
+
+  </div>
+</section>
