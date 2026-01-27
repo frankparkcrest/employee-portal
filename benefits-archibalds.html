@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Benefits - Archibald's</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .benefits-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .benefits-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .benefits-header h1 {
+            color: #2d5016;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .benefits-header p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .benefits-section {
+            background: white;
+            padding: 40px;
+            margin-bottom: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-section h2 {
+            color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #2d5016;
+            padding-bottom: 10px;
+        }
+
+        .benefits-section p {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .pdf-links {
+            background: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .pdf-links h3 {
+            color: #2d5016;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .pdf-link {
+            display: block;
+            background: white;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            border-left: 4px solid #2d5016;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .pdf-link:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background: #f5f5f5;
+        }
+
+        .pdf-link::before {
+            content: "📄 ";
+            margin-right: 10px;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 30px;
+            background: #2d5016;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: #3d6921;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/logo.png" alt="Logo" class="nav-logo-img">
+            </a>
+            
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Select Company ▼</button>
+                    <div class="dropdown-content">
+                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
+                        <a href="ampm.html">AMPM</a>
+                        <a href="archibalds.html">Archibald's</a>
+                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
+                    </div>
+                </div>
+                
+                <a href="contact-form-archibalds.html" class="contact-btn">Contact Form</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Benefits Content -->
+    <div class="benefits-container">
+        <div class="benefits-header">
+            <h1>Employee Benefits</h1>
+            <p>Archibald's</p>
+        </div>
+
+        <!-- Section 1: Eligibility -->
+        <div class="benefits-section">
+            <h2>Eligibility</h2>
+            <p>DEMO TEXT - This section will contain information about employee eligibility requirements for benefits. Replace this text with actual eligibility criteria, waiting periods, and qualification details.</p>
+        </div>
+
+        <!-- Section 2: What's Offered -->
+        <div class="benefits-section">
+            <h2>What's Offered</h2>
+            <p>DEMO TEXT - This section will describe all the benefits offered to employees including health insurance, retirement plans, paid time off, and other perks. Replace this text with comprehensive details about your benefits package.</p>
+        </div>
+
+        <!-- Section 3: Enrollment & Contacts -->
+        <div class="benefits-section">
+            <h2>Enrollment & Contacts</h2>
+            <p>DEMO TEXT - This section will provide enrollment information, important deadlines, contact information for benefits administrators, and instructions on how to sign up. Replace this text with enrollment procedures and contact details.</p>
+        </div>
+
+        <!-- PDF Downloads Section -->
+        <div class="pdf-links">
+            <h3>Benefits Documents</h3>
+            <p style="margin-bottom: 20px; color: #666;">Click on any document below to view or download:</p>
+            
+            <a href="docs/Cal Saver Employee Benefit.pdf" class="pdf-link">Cal Saver Employee Benefit</a>
+            <a href="docs/Cal Savers Program Disclosure.pdf" class="pdf-link">Cal Savers Program Disclosure</a>
+            <a href="docs/Cal Savers overview.pdf" class="pdf-link">Cal Savers Overview</a>
+            <a href="docs/Health Coverage.pdf" class="pdf-link">Health Coverage</a>
+            <a href="docs/CA Paid Family Leave.pdf" class="pdf-link">CA Paid Family Leave</a>
+            <a href="docs/CA Family Rights Act.pdf" class="pdf-link">CA Family Rights Act</a>
+        </div>
+
+        <a href="archibalds.html" class="back-button">← Back to Resources</a>
+    </div>
+</body>
+</html>
