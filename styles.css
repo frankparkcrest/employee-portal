@@ -25,7 +25,7 @@ body {
 }
 
 .logo img {
-    width: 220px;   /* ← THIS is the fix */
+    width: 160px;   /* ← THIS is the fix */
     max-width: 100%;
     height: auto;
     display: block;
