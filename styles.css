@@ -282,3 +282,16 @@ body {
         max-width: 150px;
     }
 }
+
+/* ===== PARKCREST PORTAL HEADER (ADDITIVE) ===== */
+
+.portal-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.portal-logo {
+    max-width: 260px;
+    height: auto;
+}
