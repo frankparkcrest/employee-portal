@@ -24,14 +24,11 @@ body {
     margin-bottom: 50px;
 }
 
- .logo {
-    max-width: 70px;        /* HARD cap — prevents oversized logo */
+ .logo img {
+    width: 320px;     /* ← controls how big the logo looks */
+    max-width: 100%;
     height: auto;
-    background: white;
-    padding:  124px 16px;        /* more breathing room */
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    display: inline-block;
+    display: block;
 }
 
 .main-heading {
@@ -274,9 +271,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    .company-card,
-    .resource-card {
-        padding: 30px 20px;
+    .logo img {
+        width: 240px;
     }
 
      {
