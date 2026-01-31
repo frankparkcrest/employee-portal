@@ -1,58 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Archibald’s Compliance</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    padding: 40px;
-    background: #ffffff;
-    color: #000;
-  }
-  h1 {
-    margin-bottom: 24px;
-  }
-  h2 {
-    margin-top: 40px;
-    border-bottom: 2px solid #000;
-    padding-bottom: 6px;
-  }
-  ul {
-    list-style: disc;
-    padding-left: 20px;
-  }
-  li {
-    margin: 6px 0;
-  }
-  a {
-    color: #0066cc;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-</style>
+  <meta charset="UTF-8">
+  <title>Archibald’s Compliance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #ffffff;
+      color: #000;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      cursor: pointer;
+      border-bottom: 2px solid #000;
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    ul {
+      list-style: disc;
+      padding-left: 20px;
+      margin-top: 15px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    a {
+      color: #0066cc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
 
-<h1>Compliance Information</h1>
+  <h1>Compliance Information</h1>
 
-<!-- TAX INFO (PUT ALL YOUR TAX LINKS HERE – NOTHING ELSE) -->
-<h2>Tax Information</h2>
-<ul>
-  <!-- PASTE YOUR EXISTING TAX LINKS BELOW -->
-  <!-- EXAMPLE:
-  <li><a href="LINK_HERE" target="_blank">Link Name</a></li>
-  -->
-</ul>
+  <!-- TAX CATEGORY -->
+  <h2 onclick="toggleLinks('tax')">Tax Information</h2>
+  <ul id="tax" style="display:none;">
+    <li><a href="https://www.irs.gov" target="_blank">Internal Revenue Service (IRS)</a></li>
+    <li><a href="https://www.ftb.ca.gov" target="_blank">California Franchise Tax Board</a></li>
+    <li><a href="https://www.cdtfa.ca.gov" target="_blank">California Dept. of Tax and Fee Administration</a></li>
+    <li><a href="https://www.edd.ca.gov/Payroll_Taxes/" target="_blank">EDD – Payroll Taxes</a></li>
+  </ul>
 
-<!-- LABOR INFO (PUT ALL YOUR LABOR / BENEFITS LINKS HERE – NOTHING ELSE) -->
-<h2>Labor Information</h2>
-<ul>
-  <!-- PASTE YOUR EXISTING LABOR LINKS BELOW -->
-</ul>
+  <!-- LABOR CATEGORY -->
+  <h2 onclick="toggleLinks('labor')">Labor Information</h2>
+  <ul id="labor" style="display:none;">
+    <li><a href="https://www.dir.ca.gov" target="_blank">California Department of Industrial Relations</a></li>
+    <li><a href="https://www.dol.gov" target="_blank">U.S. Department of Labor</a></li>
+    <li><a href="https://www.osha.gov" target="_blank">OSHA – Workplace Safety</a></li>
+    <li><a href="https://www.dir.ca.gov/dlse/" target="_blank">DLSE – Wage & Hour Laws</a></li>
+    <li><a href="https://calcivilrights.ca.gov" target="_blank">California Civil Rights Department</a></li>
+  </ul>
+
+  <script>
+    function toggleLinks(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
 
 </body>
 </html>
