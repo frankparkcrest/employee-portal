@@ -24,11 +24,11 @@ body {
     margin-bottom: 50px;
 }
 
- {
-    max-width: 360px;          /* BIGGER + brand-forward */
+ .logo {
+    max-width: 260px;          /* BIGGER + brand-forward */
     height: auto;
     background: white;
-    padding:  24px 28px;        /* more breathing room */;
+    padding:  24px 28px;        /* more breathing room */
     border-radius:14px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
