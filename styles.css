@@ -295,3 +295,11 @@ body {
     max-width: 260px;
     height: auto;
 }
+
+.company-logo {
+  max-width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 12px;
+}
+
