@@ -25,12 +25,13 @@ body {
 }
 
  .logo {
-    max-width: 260px;          /* BIGGER + brand-forward */
+    max-width: 70px;        /* HARD cap — prevents oversized logo */
     height: auto;
     background: white;
-    padding:  24px 28px;        /* more breathing room */
-    border-radius:14px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    padding:  124px 16px;        /* more breathing room */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    display: inline-block;
 }
 
 .main-heading {
