@@ -236,6 +236,7 @@ body {
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
+
 @media (max-width: 768px) {
     .main-heading {
         font-size: 2rem;
@@ -255,11 +256,13 @@ body {
         width: 100%;
     }
 
-    .dropdown, .contact-btn {
+    .dropdown,
+    .contact-btn {
         width: 100%;
     }
 
-    .dropdown-btn, .contact-btn {
+    .dropdown-btn,
+    .contact-btn {
         width: 100%;
         text-align: center;
     }
@@ -271,38 +274,16 @@ body {
 }
 
 @media (max-width: 480px) {
+    /* Top Parkcrest logo */
     .logo img {
-        width: 240px;
+        width: 220px;
+        height: auto;
     }
 
-     {
-        max-width: 150px;
-    }
-}
-
-/* ===== PARKCREST PORTAL HEADER (ADDITIVE) ===== */
-
-.portal-header {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-.portal-logo {
-    max-width: 260px;
-    height: auto;
-}
-
-.company-logo {
-  max-width: 120px;
-  height: auto;
-  display: block;
-  margin: 0 auto 12px;
-}
-
-@media (max-width: 480px) {
-    .logo {
-        max-width: 220px;
+    /* Company card logos */
+    .company-logo {
+        max-width: 120px;
+        height: auto;
     }
 }
 
