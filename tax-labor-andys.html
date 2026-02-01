@@ -3,114 +3,272 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax and Labor Law Info - Andy's Xpress Wash</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tax and Labor Law Information - Andy's Xpress Wash</title>
     <style>
-        .tax-labor-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .tax-labor-header {
-            text-align: center;
-            margin-bottom: 50px;
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
         }
 
-        .tax-labor-header h1 {
+        /* Navigation Bar */
+        .navbar {
+            background-color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-btn {
+            background-color: white;
             color: #2d5016;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: 2px solid #2d5016;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
         }
 
-        .tax-labor-header p {
-            color: #666;
-            font-size: 1.1rem;
+        .dropdown-btn:hover {
+            background-color: #2d5016;
+            color: white;
         }
 
-        .tax-labor-section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+            margin-top: 0.5rem;
+            overflow: hidden;
         }
 
-        .tax-labor-section h2 {
-            color: #2d5016;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #2d5016;
-            padding-bottom: 10px;
-        }
-
-        .tax-labor-section p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .pdf-links {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-
-        .pdf-links h3 {
-            color: #2d5016;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .pdf-category {
-            margin-bottom: 30px;
-        }
-
-        .pdf-category h4 {
-            color: #2d5016;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .pdf-link {
+        .dropdown-content a {
+            color: #333;
+            padding: 12px 16px;
+            text-decoration: none;
             display: block;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f0f0f0;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .contact-btn {
+            background-color: #2d5016;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+
+        .contact-btn:hover {
+            background-color: #3d6b1f;
+        }
+
+        /* Main Content */
+        .content-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #2d5016;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .company-subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Content Sections */
+        .content-section {
             background: white;
-            padding: 15px 20px;
-            margin-bottom: 15px;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid #2d5016;
+        }
+
+        .section-text {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Documents Section */
+        .documents-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .documents-title {
+            font-size: 1.75rem;
+            color: #2d5016;
+            margin-bottom: 2rem;
+        }
+
+        .document-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-left: 5px solid #2d5016;
             border-radius: 8px;
             text-decoration: none;
             color: #333;
-            border-left: 4px solid #2d5016;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
-        .pdf-link:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: #f5f5f5;
+        .document-item:hover {
+            background-color: #f9f9f9;
+            border-left-width: 8px;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .pdf-link::before {
-            content: "📄 ";
-            margin-right: 10px;
+        .document-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #2d5016;
         }
 
+        .document-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Back Button */
         .back-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: #2d5016;
+            display: inline-flex;
+            align-items: center;
+            background-color: #2d5016;
             color: white;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 8px;
-            transition: background 0.3s ease;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: 2rem;
         }
 
         .back-button:hover {
-            background: #3d6921;
+            background-color: #3d6b1f;
+        }
+
+        .back-arrow {
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .dropdown, .contact-btn {
+                width: 100%;
+            }
+
+            .dropdown-btn, .contact-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .page-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .documents-section {
+                padding: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -119,7 +277,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html" class="nav-logo">
-                <img src="assets/logo.png" alt="Logo" class="nav-logo-img">
+                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
             </a>
             
             <div class="nav-menu">
@@ -138,58 +296,85 @@
         </div>
     </nav>
 
-    <!-- Tax and Labor Content -->
-    <div class="tax-labor-container">
-        <div class="tax-labor-header">
-            <h1>Tax and Labor Law Information</h1>
-            <p>Andy's Xpress Wash</p>
+    <!-- Main Content -->
+    <div class="content-container">
+        <h1 class="page-title">Tax and Labor Law Information</h1>
+        <p class="company-subtitle">Andy's Xpress Wash</p>
+
+        <!-- Tax Forms Section -->
+        <div class="content-section">
+            <h2 class="section-title">Tax Forms & Requirements</h2>
+            <p class="section-text">
+                This section contains important tax forms and withholding requirements. All employees must complete the required forms for tax purposes.
+                <br><br>
+                See the <strong>Tax Documents</strong> section below for downloadable forms.
+            </p>
         </div>
 
-        <!-- Section 1: Tax Forms & Requirements -->
-        <div class="tax-labor-section">
-            <h2>Tax Forms & Requirements</h2>
-            <p>DEMO TEXT - This section will contain information about tax forms, withholding requirements, and important tax deadlines. Replace this text with details about W-4 forms, I-9 requirements, and other tax-related information employees need to know.</p>
+        <!-- Labor Laws Section -->
+        <div class="content-section">
+            <h2 class="section-title">Labor Laws & Employee Rights</h2>
+            <p class="section-text">
+                Employees have rights under federal and state labor laws, including minimum wage, overtime, breaks, and workplace protections.
+                <br><br>
+                Review the information below to understand your rights and protections in the workplace.
+            </p>
         </div>
 
-        <!-- Section 2: Labor Laws & Employee Rights -->
-        <div class="tax-labor-section">
-            <h2>Labor Laws & Employee Rights</h2>
-            <p>DEMO TEXT - This section will explain employee rights under federal and state labor laws, including information about minimum wage, overtime, breaks, and workplace protections. Replace this text with comprehensive labor law information relevant to your employees.</p>
+        <!-- Required Postings Section -->
+        <div class="content-section">
+            <h2 class="section-title">Required Postings & Notices</h2>
+            <p class="section-text">
+                This section provides access to legally required workplace postings and notices, including anti-discrimination notices, safety information, and employee rights posters.
+                <br><br>
+                These documents are also posted at the workplace as required by law.
+            </p>
         </div>
 
-        <!-- Section 3: Required Postings & Notices -->
-        <div class="tax-labor-section">
-            <h2>Required Postings & Notices</h2>
-            <p>DEMO TEXT - This section will provide access to legally required workplace postings and notices, including anti-discrimination notices, safety information, and employee rights posters. Replace this text with details about required postings and where employees can find them.</p>
-        </div>
-
-        <!-- PDF Downloads Section -->
-        <div class="pdf-links">
-            <h3>Tax and Labor Documents</h3>
-            <p style="margin-bottom: 30px; color: #666;">Click on any document below to view or download:</p>
+        <!-- Tax Documents Section -->
+        <div class="documents-section">
+            <h2 class="documents-title">Tax Documents</h2>
+            <p class="section-text" style="margin-bottom: 1.5rem;">Click on any document below to view or download:</p>
             
-            <!-- Tax Forms -->
-            <div class="pdf-category">
-                <h4>Tax Forms</h4>
-                <a href="docs/W4 2026.pdf" class="pdf-link">W-4 Form (English) - 2026</a>
-                <a href="docs/W4 2026 - Spanish.pdf" class="pdf-link">W-4 Form (Spanish) - 2026</a>
-                <a href="docs/EDD4 2026.pdf" class="pdf-link">EDD Form DE 4 (English) - 2026</a>
-                <a href="docs/EDD4 2026 - Spanish.pdf" class="pdf-link">EDD Form DE 4 (Spanish) - 2026</a>
-                <a href="docs/i-9.pdf" class="pdf-link">I-9 Employment Eligibility Verification (English)</a>
-                <a href="docs/i-9 Spanish.pdf" class="pdf-link">I-9 Employment Eligibility Verification (Spanish)</a>
-            </div>
-
-            <!-- Labor Law & Employee Rights -->
-            <div class="pdf-category">
-                <h4>Labor Law & Employee Rights</h4>
-                <a href="docs/Know-Your-Rights-Notice-English.pdf" class="pdf-link">Know Your Rights Notice (English)</a>
-                <a href="docs/Know-Your-Rights-Notice-Spanish.pdf" class="pdf-link">Know Your Rights Notice (Spanish)</a>
-                <a href="docs/Sexual Harassment Fact Sheet.pdf" class="pdf-link">Sexual Harassment Fact Sheet</a>
-                <a href="docs/Sick Leave Policy.pdf" class="pdf-link">Sick Leave Policy</a>
+            <h3 class="documents-title" style="font-size: 1.3rem; margin-top: 2rem; margin-bottom: 1rem;">Tax Forms</h3>
+            <div class="document-list">
+                <a href="docs/w4-form-english-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">W-4 Form (English) - 2026</span>
+                </a>
+                
+                <a href="docs/w4-form-spanish-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">W-4 Form (Spanish) - 2026</span>
+                </a>
+                
+                <a href="docs/edd-form-de4-english-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">EDD Form DE 4 (English) - 2026</span>
+                </a>
+                
+                <a href="docs/edd-form-de4-spanish-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">EDD Form DE 4 (Spanish) - 2026</span>
+                </a>
+                
+                <a href="docs/i9-employment-eligibility-verification-english.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">I-9 Employment Eligibility Verification (English)</span>
+                </a>
+                
+                <a href="docs/i9-employment-eligibility-verification-spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">I-9 Employment Eligibility Verification (Spanish)</span>
+                </a>
             </div>
         </div>
 
-        <a href="andys-xpress-wash.html" class="back-button">← Back to Resources</a>
+        <!-- Back Button -->
+        <a href="andys-xpress-wash.html" class="back-button">
+            <span class="back-arrow">←</span>
+            Back to Resources
+        </a>
     </div>
 </body>
 </html>
