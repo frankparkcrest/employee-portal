@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AMPM - Employee Portal</title>
+    <title>Andy's Xpress Wash - Employee Portal</title>
     <style>
         * {
             margin: 0;
@@ -178,6 +178,28 @@
             line-height: 1.5;
         }
 
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #2d5016;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            background-color: #3d6b1f;
+        }
+
+        .back-arrow {
+            margin-right: 0.5rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
@@ -228,29 +250,35 @@
                     </div>
                 </div>
                 
-                <a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
+                <a href="contact-form-andys.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
 
     <!-- Main Content -->
     <div class="content-container">
-        <h1 class="company-title">AMPM</h1>
+        <h1 class="company-title">Andy's Xpress Wash</h1>
         <p class="company-subtitle">Employee Resources</p>
         
         <div class="resources-grid">
-            <a href="benefits-ampm.html" class="resource-card">
+            <a href="benefits-andys.html" class="resource-card">
                 <div class="resource-icon">📋</div>
                 <h2>Employee Benefit Docs</h2>
                 <p>Access your benefits information and documentation</p>
             </a>
             
-            <a href="tax-labor-ampm.html" class="resource-card">
+            <a href="tax-labor-andys.html" class="resource-card">
                 <div class="resource-icon">⚖️</div>
                 <h2>Tax and Labor Law Info</h2>
                 <p>View tax documents and labor law information</p>
             </a>
         </div>
+
+        <!-- Back to Homepage Button -->
+        <a href="index.html" class="back-button">
+            <span class="back-arrow">←</span>
+            Back to Homepage
+        </a>
     </div>
 </body>
 </html>
