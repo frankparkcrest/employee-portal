@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Andy's Xpress Wash - Employee Portal</title>
+    <title>Employee Benefits - Andy's Xpress Wash</title>
     <style>
         * {
             margin: 0;
@@ -122,7 +122,7 @@
             padding: 0 2rem;
         }
 
-        .company-title {
+        .page-title {
             font-size: 2.5rem;
             color: #2d5016;
             margin-bottom: 0.5rem;
@@ -136,46 +136,107 @@
             text-align: center;
         }
 
-        /* Resources Grid */
-        .resources-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .resource-card {
+        /* Content Sections */
+        .content-section {
             background: white;
-            padding: 2rem;
+            padding: 2.5rem;
             border-radius: 12px;
-            text-decoration: none;
-            color: inherit;
+            margin-bottom: 2rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 2px solid transparent;
-            text-align: center;
         }
 
-        .resource-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-            border-color: #2d5016;
+        .section-title {
+            font-size: 2rem;
+            color: #2d5016;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid #2d5016;
         }
 
-        .resource-icon {
-            font-size: 3rem;
+        .section-text {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Documents Section */
+        .documents-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .documents-title {
+            font-size: 2rem;
+            color: #2d5016;
             margin-bottom: 1rem;
         }
 
-        .resource-card h2 {
-            color: #2d5016;
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
+        .documents-intro {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
         }
 
-        .resource-card p {
-            color: #666;
-            line-height: 1.5;
+        .document-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .document-item {
+            display: flex;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-left: 5px solid #2d5016;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+
+        .document-item:hover {
+            background-color: #f9f9f9;
+            border-left-width: 8px;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .document-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: #2d5016;
+        }
+
+        .document-name {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* Back Button */
+        .back-button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #2d5016;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            margin-top: 2rem;
+        }
+
+        .back-button:hover {
+            background-color: #3d6b1f;
+        }
+
+        .back-arrow {
+            margin-right: 0.5rem;
         }
 
         /* Responsive Design */
@@ -199,12 +260,20 @@
                 text-align: center;
             }
 
-            .company-title {
+            .page-title {
                 font-size: 2rem;
             }
 
-            .resources-grid {
-                grid-template-columns: 1fr;
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .documents-section {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -235,22 +304,88 @@
 
     <!-- Main Content -->
     <div class="content-container">
-        <h1 class="company-title">Andy's Xpress Wash</h1>
-        <p class="company-subtitle">Employee Resources</p>
-        
-        <div class="resources-grid">
-            <a href="benefits-andys.html" class="resource-card">
-                <div class="resource-icon">📋</div>
-                <h2>Employee Benefit Docs</h2>
-                <p>Access your benefits information and documentation</p>
-            </a>
-            
-            <a href="tax-labor-andys.html" class="resource-card">
-                <div class="resource-icon">⚖️</div>
-                <h2>Tax and Labor Law Info</h2>
-                <p>View tax documents and labor law information</p>
-            </a>
+        <h1 class="page-title">Employee Benefits</h1>
+        <p class="company-subtitle">Andy's Xpress Wash</p>
+
+        <!-- Eligibility Section -->
+        <div class="content-section">
+            <h2 class="section-title">Eligibility</h2>
+            <p class="section-text">
+                Eligibility depends on your role, hours worked, and length of employment.
+                <br><br>
+                Some benefits are required by law and apply to all employees, while others vary by employment status.
+                <br><br>
+                See the <strong>Benefits Documents</strong> section below for official eligibility details.
+            </p>
         </div>
+
+        <!-- What's Offered Section -->
+        <div class="content-section">
+            <h2 class="section-title">What's Offered</h2>
+            <p class="section-text">
+                Andy's Xpress Wash provides legally required employee benefits and protections, plus additional programs based on eligibility.
+                <br><br>
+                Benefits may include health coverage, paid leave, retirement savings, and workplace notices.
+                <br><br>
+                See the <strong>Benefits Documents</strong> section below for complete details.
+            </p>
+        </div>
+
+        <!-- Enrollment & Contacts Section -->
+        <div class="content-section">
+            <h2 class="section-title">Enrollment & Contacts</h2>
+            <p class="section-text">
+                Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR.
+                <br><br>
+                Review the <strong>Benefits Documents</strong> section below for required forms and program information.
+                <br><br>
+                Use the <strong>Contact Form</strong> above if you need additional help.
+            </p>
+        </div>
+
+        <!-- Benefits Documents Section -->
+        <div class="documents-section">
+            <h2 class="documents-title">Benefits Documents</h2>
+            <p class="documents-intro">Click on any document below to view or download:</p>
+            
+            <div class="document-list">
+                <a href="docs/cal-saver-employee-benefit.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">Cal Saver Employee Benefit</span>
+                </a>
+                
+                <a href="docs/cal-savers-program-disclosure.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">Cal Savers Program Disclosure</span>
+                </a>
+                
+                <a href="docs/cal-savers-overview.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">Cal Savers Overview</span>
+                </a>
+                
+                <a href="docs/health-coverage.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">Health Coverage</span>
+                </a>
+                
+                <a href="docs/ca-paid-family-leave.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">CA Paid Family Leave</span>
+                </a>
+                
+                <a href="docs/ca-family-rights-act.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">CA Family Rights Act</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <a href="andys-xpress-wash.html" class="back-button">
+            <span class="back-arrow">←</span>
+            Back to Resources
+        </a>
     </div>
 </body>
 </html>
