@@ -21,111 +21,52 @@
         /* Navigation Bar */
         .navbar {
             background-color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
         }
 
         .nav-logo-img {
-            height: 50px;
+            height: 60px;
             width: auto;
         }
 
         .nav-menu {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
         }
 
         .dropdown-btn {
             background-color: white;
             color: #2d5016;
-            padding: 0.625rem 1rem;
-            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
             border: 2px solid #2d5016;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 500;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .dropdown-btn:hover {
-            background-color: #2d5016;
-            color: white;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1000;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-            overflow: hidden;
-            right: 0;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.2s;
-            white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         .contact-btn {
             background-color: #2d5016;
             color: white;
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 500;
-            transition: background-color 0.3s;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        .contact-btn:hover {
-            background-color: #3d6b1f;
         }
 
         /* Main Content */
         .content-container {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 3rem auto;
             padding: 0 2rem;
         }
@@ -133,107 +74,84 @@
         .page-title {
             font-size: 2.5rem;
             color: #2d5016;
-            margin-bottom: 0.5rem;
             text-align: center;
+            margin-bottom: 0.5rem;
         }
 
-        .company-subtitle {
+        .company-name {
             font-size: 1.25rem;
             color: #666;
-            margin-bottom: 3rem;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        /* Content Sections - MUCH MORE COMPACT */
-        .content-section {
+        /* Information Cards */
+        .info-card {
             background: white;
-            padding: 1.5rem;
+            padding: 2.5rem;
             border-radius: 12px;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            display: inline-block;
-            width: auto;
-            max-width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
         }
 
-        .section-title {
-            font-size: 1.5rem;
+        .info-card h2 {
             color: #2d5016;
-            margin-bottom: 0.75rem;
-            padding-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
             border-bottom: 3px solid #2d5016;
             display: inline-block;
+            padding-bottom: 5px;
         }
 
-        .section-text {
-            color: #666;
-            font-size: 1rem;
-            line-height: 1.5;
-            margin: 0;
-        }
-
-        /* Documents Section - COMPACT */
-        .documents-section {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
+        .info-card p {
             margin-bottom: 1.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            color: #444;
+            font-size: 1.05rem;
         }
 
-        .documents-title {
-            font-size: 1.5rem;
+        /* Documents Section */
+        .docs-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .docs-section h2 {
             color: #2d5016;
             margin-bottom: 1rem;
         }
 
-        .documents-intro {
-            color: #666;
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .doc-list {
+            list-style: none;
+            margin-top: 1.5rem;
         }
 
-        /* Document Items */
-        .document-list {
-            display: flex;
-            flex-direction: column;
-            gap: 0.75rem;
-        }
-
-        .document-item {
+        .doc-item {
             display: flex;
             align-items: center;
-            padding: 0.875rem 1rem;
-            background: #fafafa;
-            border: 2px solid #e8e8e8;
-            border-left: 4px solid #2d5016;
-            border-radius: 6px;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
             text-decoration: none;
             color: #333;
-            transition: all 0.2s ease;
+            transition: all 0.2s;
+            border-left: 5px solid #2d5016;
         }
 
-        .document-item:hover {
-            background-color: #f5f5f5;
-            border-left-width: 6px;
-            transform: translateX(3px);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        .doc-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(5px);
         }
 
-        .document-icon {
-            font-size: 1.25rem;
-            margin-right: 0.75rem;
-            color: #2d5016;
-        }
-
-        .document-name {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #333;
+        .doc-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
         }
 
         /* Back Button */
-        .back-button {
+        .back-btn {
             display: inline-flex;
             align-items: center;
             background-color: #2d5016;
@@ -241,177 +159,81 @@
             padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 8px;
+            margin-top: 2rem;
             font-weight: 500;
-            transition: background-color 0.3s;
-            margin-top: 1.5rem;
         }
 
-        .back-button:hover {
-            background-color: #3d6b1f;
-        }
-
-        .back-arrow {
-            margin-right: 0.5rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-logo-img {
-                height: 45px;
-            }
-
-            .nav-menu {
-                gap: 0.5rem;
-            }
-
-            .dropdown-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
-            }
-
-            .contact-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
-            }
-
-            .page-title {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.35rem;
-            }
-
-            .content-section {
-                padding: 1.25rem;
-                width: 100%;
-            }
-
-            .documents-section {
-                padding: 1.25rem;
-            }
-
-            .content-container {
-                padding: 0 1rem;
-                margin: 2rem auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .nav-logo-img {
-                height: 40px;
-            }
-
-            .dropdown-btn {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.8rem;
-            }
-
-            .contact-btn {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.8rem;
-            }
-
-            .page-title {
-                font-size: 1.75rem;
-            }
-        }
+        .back-btn:hover { background-color: #3d6b1f; }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
-            </a>
-            
+            <a href="index.html"><img src="employee-portal/assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
             <div class="nav-menu">
-                <div class="dropdown">
-                    <button class="dropdown-btn">Select Company ▼</button>
-                    <div class="dropdown-content">
-                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                        <a href="ampm.html">AMPM</a>
-                        <a href="archibalds.html">Archibald's</a>
-                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
-                    </div>
-                </div>
-                
-                <a href="contact-form-andys.html" class="contact-btn">Contact Form</a>
+                <button class="dropdown-btn">Select Company ▼</button>
+                <a href="contact-form.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="content-container">
         <h1 class="page-title">Employee Benefits</h1>
-        <p class="company-subtitle">Andy's Xpress Wash</p>
+        <p class="company-name">Andy's Xpress Wash</p>
 
-        <!-- Eligibility Section -->
-        <div class="content-section">
-            <h2 class="section-title">Eligibility</h2>
-            <p class="section-text">Eligibility depends on your role, hours worked, and length of employment. Some benefits are required by law and apply to all employees, while others vary by employment status. See the Benefits Documents section below for official eligibility details.</p>
+        <div class="info-card">
+            <h2>Eligibility</h2>
+            <p>Eligibility depends on your role, hours worked, and length of employment.</p>
+            <p>Some benefits are required by law and apply to all employees, while others vary by employment status.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for official eligibility details.</p>
         </div>
 
-        <!-- What's Offered Section -->
-        <div class="content-section">
-            <h2 class="section-title">What's Offered</h2>
-            <p class="section-text">Andy's Xpress Wash provides legally required employee benefits and protections, plus additional programs based on eligibility. Benefits may include health coverage, paid leave, retirement savings, and workplace notices. See the Benefits Documents section below for complete details.</p>
+        <div class="info-card">
+            <h2>What's Offered</h2>
+            <p>Andy's Xpress Wash provides legally required employee benefits and protections, plus additional programs based on eligibility.</p>
+            <p>Benefits may include health coverage, paid leave, retirement savings, and workplace notices.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for complete details.</p>
         </div>
 
-        <!-- Enrollment & Contacts Section -->
-        <div class="content-section">
-            <h2 class="section-title">Enrollment & Contacts</h2>
-            <p class="section-text">Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR. Review the Benefits Documents section below for required forms and program information. Use the Contact Form above if you need additional help.</p>
+        <div class="info-card">
+            <h2>Enrollment & Contacts</h2>
+            <p>Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR.</p>
+            <p>Review the <strong>Benefits Documents</strong> section below for required forms and program information.</p>
+            <p>Use the <strong>Contact Form</strong> above if you need additional help.</p>
         </div>
 
-        <!-- Benefits Documents Section -->
-        <div class="documents-section">
-            <h2 class="documents-title">Benefits Documents</h2>
-            <p class="documents-intro">Click on any document below to view or download:</p>
+        <div class="docs-section">
+            <h2>Benefits Documents</h2>
+            <p>Click on any document below to view or download:</p>
             
-            <div class="document-list">
-                <a href="docs/cal-saver-employee-benefit.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Saver Employee Benefit</span>
+            <div class="doc-list">
+                <a href="docs/cal-saver-employee-benefit.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Saver Employee Benefit
                 </a>
-                
-                <a href="docs/cal-savers-program-disclosure.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Savers Program Disclosure</span>
+                <a href="docs/cal-savers-program-disclosure.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Savers Program Disclosure
                 </a>
-                
-                <a href="docs/cal-savers-overview.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Savers Overview</span>
+                <a href="docs/cal-savers-overview.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Savers Overview
                 </a>
-                
-                <a href="docs/health-coverage.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Health Coverage</span>
+                <a href="docs/health-coverage.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Health Coverage
                 </a>
-                
-                <a href="docs/ca-paid-family-leave.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">CA Paid Family Leave</span>
+                <a href="docs/ca-paid-family-leave.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA Paid Family Leave
                 </a>
-                
-                <a href="docs/ca-family-rights-act.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">CA Family Rights Act</span>
+                <a href="docs/ca-family-rights-act.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA Family Rights Act
+                </a>
+                <a href="docs/sick-leave-policy.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Sick Leave Policy
                 </a>
             </div>
         </div>
 
-        <!-- Back Button -->
-        <a href="andys-xpress-wash.html" class="back-button">
-            <span class="back-arrow">←</span>
-            Back to Resources
-        </a>
+        <a href="andys-xpress-wash.html" class="back-btn">← Back to Resources</a>
     </div>
+
 </body>
 </html>
