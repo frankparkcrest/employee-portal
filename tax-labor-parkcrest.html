@@ -3,62 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax and Labor Law Information - Parkcrest Properties</title>
+    <title>Tax and Labor Law Info - Parkcrest Properties</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
-        .navbar { background-color: white; padding: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
-        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; }
-        .nav-logo-img { height: 50px; width: auto; }
-        .dropdown-btn { background-color: white; color: #2d5016; padding: 0.625rem 1rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; }
-        .contact-btn { background-color: #2d5016; color: white; padding: 0.625rem 1rem; text-decoration: none; border-radius: 8px; }
-        
-        .content-container { max-width: 1000px; margin: 3rem auto; padding: 0 20px; }
-        .page-title { font-size: 2.5rem; color: #2d5016; text-align: center; margin-bottom: 0.5rem; }
-        .company-subtitle { font-size: 1.25rem; color: #666; text-align: center; margin-bottom: 3rem; }
-        
-        .info-box { background: white; max-width: 900px; margin: 0 auto 1.5rem auto; padding: 2.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
-        .section-title { font-size: 1.5rem; color: #2d5016; margin-bottom: 0.75rem; border-bottom: 3px solid #2d5016; display: inline-block; }
-        
-        .document-item { display: flex; align-items: center; padding: 1rem; background: #fafafa; border: 1px solid #ddd; border-left: 5px solid #2d5016; border-radius: 6px; text-decoration: none; color: #333; margin-bottom: 0.75rem; transition: 0.2s; }
-        .document-item:hover { background: #f0f0f0; transform: translateX(5px); }
-        
-        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; margin-top: 1.5rem; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .dropdown-btn {
+            background-color: white;
+            color: #2d5016;
+            padding: 0.75rem 1.5rem;
+            border: 2px solid #2d5016;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .contact-btn {
+            background-color: #2d5016;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        /* Main Content */
+        .content-container {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .page-title {
+            font-size: 2.5rem;
+            color: #2d5016;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name {
+            font-size: 1.25rem;
+            color: #666;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Information Cards */
+        .info-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+        }
+
+        .info-card h2 {
+            color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #2d5016;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-card p {
+            margin-bottom: 1.5rem;
+            color: #444;
+            font-size: 1.05rem;
+        }
+
+        /* Documents Section */
+        .docs-section {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .docs-section h2 {
+            color: #2d5016;
+            margin-bottom: 1rem;
+        }
+
+        .doc-list {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .doc-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.2s;
+            border-left: 5px solid #2d5016;
+        }
+
+        .doc-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(5px);
+        }
+
+        .doc-icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: #2d5016;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 2rem;
+            font-weight: 500;
+        }
+
+        .back-btn:hover { background-color: #3d6b1f; }
     </style>
 </head>
 <body>
+
     <nav class="navbar">
         <div class="nav-container">
             <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
             <div class="nav-menu">
                 <button class="dropdown-btn">Select Company ▼</button>
-                <div class="dropdown-content">
-                    <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                    <a href="ampm.html">AMPM</a>
-                    <a href="archibalds.html">Archibald's</a>
-                    <a href="parkcrest-properties.html">Parkcrest Properties</a>
-                </div>
-                <a href="contact-form-parkcrest.html" class="contact-btn">Contact Form</a>
+                <a href="contact-form.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
+
     <div class="content-container">
-        <h1 class="page-title">Tax and Labor Law Information</h1>
-        <p class="company-subtitle">Parkcrest Properties</p>
-        
-        <div class="info-box">
-            <h2 class="section-title">Tax Forms & Requirements</h2>
-            <p>Federal and state regulations require all employees to maintain updated tax withholding forms (W-4 and DE-4)[cite: 8].</p>
+        <h1 class="page-title">Tax and Labor Law Info</h1>
+        <p class="company-name">Parkcrest Properties</p>
+
+        <div class="info-card">
+            <h2>Eligibility</h2>
+            <p>Eligibility depends on your role, hours worked, and length of employment.</p>
+            <p>Some benefits are required by law and apply to all employees, while others vary by employment status.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for official eligibility details.</p>
         </div>
-        
-        <div class="info-box">
-            <h2 style="margin-bottom:1rem; border:none; color:#2d5016;">Tax Documents</h2>
-            <a href="docs/W4 2026.pdf" class="document-item">📄 W-4 Form (English) - 2026</a>
-            <a href="docs/EDD4 2026.pdf" class="document-item">📄 EDD Form DE 4 (English) - 2026</a>
-            <a href="docs/Know-Your-Rights-Notice-English.pdf" class="document-item">⚖️ Know Your Rights Notice (English)</a>
-            <a href="docs/Sick Leave Policy.pdf" class="document-item">📋 Sick Leave Policy</a>
+
+        <div class="info-card">
+            <h2>What's Offered</h2>
+            <p>Parkcrest Properties provides legally required employee benefits and protections, plus additional programs based on eligibility.</p>
+            <p>Benefits may include health coverage, paid leave, retirement savings, and workplace notices.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for complete details.</p>
         </div>
-        <a href="parkcrest-properties.html" class="back-button">← Back to Resources</a>
+
+        <div class="info-card">
+            <h2>Enrollment & Contacts</h2>
+            <p>Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR.</p>
+            <p>Review the <strong>Benefits Documents</strong> section below for required forms and program information.</p>
+            <p>Use the <strong>Contact Form</strong> above if you need additional help.</p>
+        </div>
+
+        <div class="docs-section">
+            <h2>Tax and Labor Law Documents</h2>
+            <p>Click on any document below to view or download:</p>
+            
+            <div class="doc-list">
+                <a href="docs/w4-form-english-2026.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> W-4 Form (English) 2026
+                </a>
+                <a href="docs/w4-form-spanish-2026.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> W-4 Form (Spanish) 2026
+                </a>
+                <a href="docs/edd-form-de4-english-2026.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA EDD Form DE-4 (English) 2026
+                </a>
+                <a href="docs/edd-form-de4-spanish-2026.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA EDD Form DE-4 (Spanish) 2026
+                </a>
+                <a href="docs/i9-employment-eligibility-verification-english.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (English)
+                </a>
+                <a href="docs/i9-employment-eligibility-verification-spanish.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (Spanish)
+                </a>
+                <a href="docs/know-your-rights-notice-english.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Know Your Rights Notice (English)
+                </a>
+                <a href="docs/know-your-rights-notice-spanish.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Know Your Rights Notice (Spanish)
+                </a>
+                <a href="docs/sexual-harassment-fact-sheet.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Sexual Harassment Fact Sheet
+                </a>
+            </div>
+        </div>
+
+        <a href="parkcrest-properties.html" class="back-btn">← Back to Resources</a>
     </div>
+
 </body>
 </html>
