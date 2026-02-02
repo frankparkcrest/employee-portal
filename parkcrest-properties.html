@@ -3,47 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parkcrest Properties - Employee Portal</title>
+    <title>Tax and Labor Law Information - Parkcrest Properties</title>
     <style>
+        /* Global Reset for Uniformity */
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
-        
-        /* Navigation Bar */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
+            background-color: #f0f0f0; 
+            color: #333; 
+            line-height: 1.6; 
+        }
+
+        /* Unified Navigation Bar */
         .navbar { background-color: white; padding: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo-img { height: 50px; width: auto; }
         .nav-menu { display: flex; gap: 0.75rem; align-items: center; }
+
         .dropdown { position: relative; display: inline-block; }
-        .dropdown-btn { background-color: white; color: #2d5016; padding: 0.625rem 1rem; font-size: 0.9rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; }
+        .dropdown-btn { background-color: white; color: #2d5016; padding: 0.625rem 1rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; }
         .dropdown-content { display: none; position: absolute; background-color: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; border-radius: 8px; margin-top: 0.5rem; overflow: hidden; right: 0; }
         .dropdown-content a { color: #333; padding: 12px 16px; text-decoration: none; display: block; }
         .dropdown:hover .dropdown-content { display: block; }
-        .contact-btn { background-color: #2d5016; color: white; padding: 0.625rem 1rem; text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; }
 
-        /* Tight Content Area (Matched to other hubs) */
-        .content-container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
-        .company-title { font-size: 2.5rem; color: #2d5016; margin-bottom: 0.5rem; text-align: center; }
-        .company-subtitle { font-size: 1.25rem; color: #666; margin-bottom: 3rem; text-align: center; }
+        .contact-btn { background-color: #2d5016; color: white; padding: 0.625rem 1rem; text-decoration: none; border-radius: 8px; font-weight: 500; }
 
-        /* Grid Layout */
-        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .resource-card { background: white; padding: 2rem; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; text-align: center; display: flex; flex-direction: column; align-items: center; }
-        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); border-color: #2d5016; }
-        
-        /* Standardized Icon Size */
-        .resource-icon-img { height: 60px; width: auto; margin-bottom: 1rem; }
+        /* FIXED 900px BOXES FOR UNIFORMITY */
+        .content-container { max-width: 1000px; margin: 3rem auto; padding: 0 20px; }
+        .page-title { font-size: 2.5rem; color: #2d5016; text-align: center; margin-bottom: 0.5rem; }
+        .company-subtitle { font-size: 1.25rem; color: #666; text-align: center; margin-bottom: 3rem; }
 
-        .resource-card h2 { color: #2d5016; font-size: 1.5rem; margin-bottom: 0.5rem; }
-        .resource-card p { color: #666; font-size: 1rem; }
-        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; margin-top: 2rem; }
+        .info-box { 
+            background: white; 
+            max-width: 900px; 
+            margin: 0 auto 1.5rem auto; 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+        }
+        .section-title { 
+            font-size: 1.5rem; 
+            color: #2d5016; 
+            margin-bottom: 0.75rem; 
+            border-bottom: 3px solid #2d5016; 
+            display: inline-block; 
+            padding-bottom: 5px;
+        }
+
+        /* Document Item Styling */
+        .document-list { display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1.5rem; }
+        .document-item { 
+            display: flex; align-items: center; padding: 1rem; background: #fafafa; border: 1px solid #ddd; 
+            border-left: 5px solid #2d5016; border-radius: 6px; text-decoration: none; color: #333; 
+            transition: 0.2s; font-weight: 500;
+        }
+        .document-item:hover { background: #f0f0f0; transform: translateX(5px); }
+        .document-icon { margin-right: 1rem; font-size: 1.2rem; }
+
+        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; margin-top: 1.5rem; }
     </style>
 </head>
 <body>
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img">
-            </a>
+            <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
             <div class="nav-menu">
                 <div class="dropdown">
                     <button class="dropdown-btn">Select Company ▼</button>
@@ -60,24 +83,61 @@
     </nav>
 
     <div class="content-container">
-        <h1 class="company-title">Parkcrest Properties</h1>
-        <p class="company-subtitle">Employee Resources</p>
+        <h1 class="page-title">Tax and Labor Law Information</h1>
+        <p class="company-subtitle">Parkcrest Properties</p>
         
-        <div class="resources-grid">
-            <a href="benefits-parkcrest.html" class="resource-card">
-                <span class="resource-icon-img" style="font-size: 50px; margin-bottom: 15px;">📋</span>
-                <h2>Employee Benefit Docs</h2>
-                <p>Access your benefits information and documentation</p>
-            </a>
-            
-            <a href="tax-labor-parkcrest.html" class="resource-card">
-                <span class="resource-icon-img" style="font-size: 50px; margin-bottom: 15px;">⚖️</span>
-                <h2>Tax and Labor Law Info</h2>
-                <p>View tax documents and labor law information</p>
-            </a>
+        <div class="info-box">
+            <h2 class="section-title">Tax Forms & Requirements</h2>
+            <p>Federal and state regulations require all employees to maintain updated tax withholding forms (W-4 and DE-4) and employment eligibility verification (I-9).</p>
         </div>
 
-        <a href="index.html" class="back-button">← Back to Homepage</a>
+        <div class="info-box">
+            <h2 class="section-title">Labor Laws & Employee Rights</h2>
+            <p>Employees are protected under federal and state labor laws, including minimum wage, overtime, breaks, and workplace protections.</p>
+        </div>
+
+        <div class="info-box">
+            <h2 class="section-title">Required Postings & Notices</h2>
+            <p>Legally required workplace postings include anti-discrimination notices, safety information, and employee rights posters.</p>
+        </div>
+        
+        <div class="info-box">
+            <h2 style="border:none; color:#2d5016;">Tax and Labor Documents</h2>
+            <p style="color:#666; margin-bottom: 1rem;">Click on any document below to view or download:</p>
+            <div class="document-list">
+                <a href="docs/W4 2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> W-4 Form (English) - 2026
+                </a>
+                <a href="docs/W4 2026 - Spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> W-4 Form (Spanish) - 2026
+                </a>
+                <a href="docs/EDD4 2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> EDD Form DE 4 (English) - 2026
+                </a>
+                <a href="docs/EDD4 2026 - Spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> EDD Form DE 4 (Spanish) - 2026
+                </a>
+                <a href="docs/i-9.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> I-9 Employment Eligibility Verification (English)
+                </a>
+                <a href="docs/i-9 Spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span> I-9 Employment Eligibility Verification (Spanish)
+                </a>
+                <a href="docs/Know-Your-Rights-Notice-English.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">⚖️</span> Know Your Rights Notice (English)
+                </a>
+                <a href="docs/Know-Your-Rights-Notice-Spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">⚖️</span> Know Your Rights Notice (Spanish)
+                </a>
+                <a href="docs/Sexual Harassment Fact Sheet.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">⚖️</span> Sexual Harassment Fact Sheet
+                </a>
+                <a href="docs/Sick Leave Policy.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📋</span> Sick Leave Policy
+                </a>
+            </div>
+        </div>
+        <a href="parkcrest-properties.html" class="back-button">← Back to Resources</a>
     </div>
 </body>
 </html>
