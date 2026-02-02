@@ -8,27 +8,40 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
 
+        /* Navigation Bar */
         .navbar { background-color: white; padding: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo-img { height: 60px; width: auto; }
         .dropdown-btn { background-color: white; color: #2d5016; padding: 0.75rem 1.5rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; }
         .contact-btn { background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; }
 
-        .main-wrapper { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
-        .header-section { text-align: center; margin-bottom: 3rem; }
-        .page-title { font-size: 2.5rem; color: #2d5016; margin-bottom: 0.5rem; }
-
-        .resources-grid { display: flex; flex-direction: column; align-items: center; gap: 2rem; }
-        .resource-card { 
-            background: white; width: 100%; max-width: 900px; padding: 3rem; 
-            border-radius: 12px; text-decoration: none; color: inherit; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08); text-align: center; transition: 0.3s;
+        /* STRICT WIDTH CONTROL */
+        .content-wrapper { 
+            max-width: 900px; /* Locked size to prevent outward expansion */
+            margin: 3rem auto; 
+            padding: 0 20px; 
+            text-align: center;
         }
-        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); border: 2px solid #2d5016; }
-        .resource-icon { font-size: 3.5rem; margin-bottom: 1rem; }
+        .header-section { margin-bottom: 3rem; }
+        .header-section h1 { font-size: 2.5rem; color: #2d5016; margin-bottom: 0.5rem; }
+
+        /* COMPACT CARD STYLING */
+        .resource-card { 
+            background: white; 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            text-decoration: none; 
+            color: inherit; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            margin-bottom: 2rem;
+            display: block;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+        .resource-icon { font-size: 3rem; margin-bottom: 1rem; }
         .resource-card h2 { color: #2d5016; font-size: 1.8rem; margin-bottom: 0.75rem; }
 
-        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 8px; margin-top: 2rem; font-weight: 500; }
+        .back-btn { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 8px; margin-top: 1rem; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -41,24 +54,22 @@
             </div>
         </div>
     </nav>
-    <div class="main-wrapper">
+    <div class="content-wrapper">
         <div class="header-section">
-            <h1 class="page-title">AMPM</h1>
+            <h1>AMPM</h1>
             <p style="color:#666;">Employee Resources</p>
         </div>
-        <div class="resources-grid">
-            <a href="benefits-ampm.html" class="resource-card">
-                <div class="resource-icon">📋</div>
-                <h2>Employee Benefit Docs</h2>
-                <p>Access your benefits information and documentation</p>
-            </a>
-            <a href="tax-labor-ampm.html" class="resource-card">
-                <div class="resource-icon">⚖️</div>
-                <h2>Tax and Labor Law Info</h2>
-                <p>View tax documents and labor law information</p>
-            </a>
-        </div>
-        <a href="index.html" class="back-button">← Back to Homepage</a>
+        <a href="benefits-ampm.html" class="resource-card">
+            <div class="resource-icon">📋</div>
+            <h2>Employee Benefit Docs</h2>
+            <p>Access your benefits information and documentation</p>
+        </a>
+        <a href="tax-labor-ampm.html" class="resource-card">
+            <div class="resource-icon">⚖️</div>
+            <h2>Tax and Labor Law Info</h2>
+            <p>View tax documents and labor law information</p>
+        </a>
+        <a href="index.html" class="back-btn">← Back to Homepage</a>
     </div>
 </body>
 </html>
