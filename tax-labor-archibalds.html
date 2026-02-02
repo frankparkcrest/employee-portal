@@ -3,201 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax and Labor Law Info - Archibald's</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Tax and Labor Law Information - Archibald's</title>
     <style>
-        .tax-labor-container {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-
-        .tax-labor-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .tax-labor-header h1 {
-            color: #2d5016;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .tax-labor-header p {
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .tax-labor-section {
-            background: white;
-            padding: 40px;
-            margin-bottom: 30px;
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .tax-labor-section h2 {
-            color: #2d5016;
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            border-bottom: 3px solid #2d5016;
-            padding-bottom: 10px;
-        }
-
-        .tax-labor-section p {
-            color: #666;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .pdf-links {
-            background: #f9f9f9;
-            padding: 30px;
-            border-radius: 10px;
-            margin-top: 40px;
-        }
-
-        .pdf-links h3 {
-            color: #2d5016;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-
-        .pdf-category {
-            margin-bottom: 30px;
-        }
-
-        .pdf-category h4 {
-            color: #2d5016;
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .pdf-link {
-            display: block;
-            background: white;
-            padding: 15px 20px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #333;
-            border-left: 4px solid #2d5016;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        }
-
-        .pdf-link:hover {
-            transform: translateX(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            background: #f5f5f5;
-        }
-
-        .pdf-link::before {
-            content: "📄 ";
-            margin-right: 10px;
-        }
-
-        .back-button {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 30px;
-            background: #2d5016;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: #3d6921;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
+        .navbar { background-color: white; padding: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo-img { height: 50px; width: auto; }
+        .nav-menu { display: flex; gap: 0.75rem; align-items: center; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { background-color: white; color: #2d5016; padding: 0.625rem 1rem; font-size: 0.9rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; }
+        .dropdown-btn:hover { background-color: #2d5016; color: white; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; border-radius: 8px; margin-top: 0.5rem; overflow: hidden; right: 0; }
+        .dropdown-content a { color: #333; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .contact-btn { background-color: #2d5016; color: white; padding: 0.625rem 1rem; text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; }
+        .content-container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
+        .page-title { font-size: 2.5rem; color: #2d5016; margin-bottom: 0.5rem; text-align: center; }
+        .company-subtitle { font-size: 1.25rem; color: #666; margin-bottom: 3rem; text-align: center; }
+        .content-section { background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .section-title { font-size: 1.75rem; color: #2d5016; margin-bottom: 0.75rem; padding-bottom: 0.5rem; border-bottom: 4px solid #2d5016; }
+        .section-text { color: #666; font-size: 1rem; line-height: 1.6; }
+        .documents-section { background: white; padding: 2rem; border-radius: 12px; margin-bottom: 2rem; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        .documents-title { font-size: 1.75rem; color: #2d5016; margin-bottom: 1.5rem; }
+        .document-list { display: flex; flex-direction: column; gap: 1rem; }
+        .document-item { display: flex; align-items: center; padding: 1rem 1.25rem; background: white; border: 2px solid #e0e0e0; border-left: 5px solid #2d5016; border-radius: 8px; text-decoration: none; color: #333; transition: all 0.3s ease; }
+        .document-item:hover { background-color: #f9f9f9; transform: translateX(5px); box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .document-icon { font-size: 1.5rem; margin-right: 1rem; color: #2d5016; }
+        .document-name { font-size: 1rem; font-weight: 500; }
+        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; margin-top: 2rem; }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-   <nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="assets/Parkcrest-Properties-Logo.png" alt="Parkcrest Properties" class="nav-logo-img">
-    </a>
-
-    <div class="nav-menu">
-      <div class="dropdown">
-        <button class="dropdown-btn">Select Company ▼</button>
-        <div class="dropdown-content">
-          <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-          <a href="ampm.html">AMPM</a>
-          <a href="archibalds.html">Archibald's</a>
-          <a href="parkcrest-properties.html">Parkcrest Properties</a>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Select Company ▼</button>
+                    <div class="dropdown-content">
+                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
+                        <a href="ampm.html">AMPM</a>
+                        <a href="archibalds.html">Archibald's</a>
+                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
+                    </div>
+                </div>
+                <a href="contact-form-archibalds.html" class="contact-btn">Contact Form</a>
+            </div>
         </div>
-      </div>
-
-      <a href="contact-form-archibalds.html" class="contact-btn">Contact Form</a>
-    </div>
-  </div>
     </nav>
-
-    <!-- Tax and Labor Content -->
-    <div class="tax-labor-container">
-        <div class="tax-labor-header">
-            <h1>Tax and Labor Law Information</h1>
-            <p>Archibald's</p>
+    <div class="content-container">
+        <h1 class="page-title">Tax and Labor Law Information</h1>
+        <p class="company-subtitle">Archibald's</p>
+        <div class="content-section">
+            <h2 class="section-title">Tax Forms & Requirements</h2>
+            <p class="section-text">Federal and state regulations require all employees to maintain updated tax withholding forms and employment eligibility verification. See the <strong>Tax Documents</strong> section below for downloadable forms.</p>
         </div>
-
-        <!-- Section 1: Tax Forms & Requirements -->
-        <div class="tax-labor-section">
-            <h2>Tax Forms & Requirements</h2>
-            <p>This section explains the tax forms employees must complete and keep up to date. It includes information on Form W-4, Form I-9, and other required tax documents, as well as basic withholding and tax responsibilities.
-            <br><br>
-            See the <strong>Tax Forms & Requirements Documents</strong> section below for official tax forms, filing requirements, and deadlines.
-            </p>
+        <div class="content-section">
+            <h2 class="section-title">Labor Laws & Employee Rights</h2>
+            <p class="section-text">Employees are protected under federal and state labor laws, including minimum wage, overtime, breaks, and workplace protections. Review the information below to understand your rights and protections in the workplace.</p>
         </div>
-
-        <!-- Section 2: Labor Laws & Employee Rights -->
-        <div class="tax-labor-section">
-            <h2>Labor Laws & Employee Rights</h2>
-            <p>This section summarizes employee rights under federal and state labor laws. Topics include minimum wage, overtime pay, meal and rest breaks, and workplace protections.
-            <br><br>
-            See the <strong>Labor Laws & Employee Rights Documents</strong> section below for official federal and state labor law information.
-            </p>
+        <div class="content-section">
+            <h2 class="section-title">Required Postings & Notices</h2>
+            <p class="section-text">This section provides access to legally required workplace postings and notices, including anti-discrimination notices, safety information, and employee rights posters. These documents are also posted at the workplace as required by law.</p>
         </div>
-
-        <!-- Section 3: Required Postings & Notices -->
-        <div class="tax-labor-section">
-            <h2>Required Postings & Notices</h2>
-            <p>This section lists required workplace notices and posters. These include employee rights, safety information, and anti-discrimination notices, and explain where employees can find them.
-            <br><br>
-            See the <strong>Required Postings & Notices Documents</strong> section below for legally required workplace posters and notices.
-            </p>
-        </div>
-
-        <!-- PDF Downloads Section -->
-        <div class="pdf-links">
-            <h3>Tax and Labor Documents</h3>
-            <p style="margin-bottom: 30px; color: #666;">Click on any document below to view or download:</p>
-            
-            <!-- Tax Forms -->
-            <div class="pdf-category">
-                <h4>Tax Forms</h4>
-                <a href="docs/W4 2026.pdf" class="pdf-link">W-4 Form (English) - 2026</a>
-                <a href="docs/W4 2026 - Spanish.pdf" class="pdf-link">W-4 Form (Spanish) - 2026</a>
-                <a href="docs/EDD4 2026.pdf" class="pdf-link">EDD Form DE 4 (English) - 2026</a>
-                <a href="docs/EDD4 2026 - Spanish.pdf" class="pdf-link">EDD Form DE 4 (Spanish) - 2026</a>
-                <a href="docs/i-9.pdf" class="pdf-link">I-9 Employment Eligibility Verification (English)</a>
-                <a href="docs/i-9 Spanish.pdf" class="pdf-link">I-9 Employment Eligibility Verification (Spanish)</a>
-            </div>
-
-            <!-- Labor Law & Employee Rights -->
-            <div class="pdf-category">
-                <h4>Labor Law & Employee Rights</h4>
-                <a href="docs/Know-Your-Rights-Notice-English.pdf" class="pdf-link">Know Your Rights Notice (English)</a>
-                <a href="docs/Know-Your-Rights-Notice-Spanish.pdf" class="pdf-link">Know Your Rights Notice (Spanish)</a>
-                <a href="docs/Sexual Harassment Fact Sheet.pdf" class="pdf-link">Sexual Harassment Fact Sheet</a>
-                <a href="docs/Sick Leave Policy.pdf" class="pdf-link">Sick Leave Policy</a>
+        <div class="documents-section">
+            <h2 class="documents-title">Tax Documents</h2>
+            <p style="color: #666; margin-bottom: 1.5rem;">Click on any document below to view or download:</p>
+            <div class="document-list">
+                <a href="docs/w4-form-english-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">W-4 Form (English) - 2026</span>
+                </a>
+                <a href="docs/w4-form-spanish-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">W-4 Form (Spanish) - 2026</span>
+                </a>
+                <a href="docs/edd-form-de4-english-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">EDD Form DE 4 (English) - 2026</span>
+                </a>
+                <a href="docs/edd-form-de4-spanish-2026.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">EDD Form DE 4 (Spanish) - 2026</span>
+                </a>
+                <a href="docs/i9-employment-eligibility-verification-english.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">I-9 Employment Eligibility Verification (English)</span>
+                </a>
+                <a href="docs/i9-employment-eligibility-verification-spanish.pdf" class="document-item" target="_blank">
+                    <span class="document-icon">📄</span>
+                    <span class="document-name">I-9 Employment Eligibility Verification (Spanish)</span>
+                </a>
             </div>
         </div>
-
         <a href="archibalds.html" class="back-button">← Back to Resources</a>
     </div>
 </body>
