@@ -5,17 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax and Labor Law Information - AMPM</title>
     <style>
-        /* Standard Global Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
 
-        /* Navigation Bar Fix */
+        /* Unified Navigation Bar */
         .navbar { background-color: white; padding: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo-img { height: 60px; width: auto; }
         .nav-menu { display: flex; gap: 1rem; align-items: center; }
 
-        /* Dropdown Styling */
         .dropdown { position: relative; display: inline-block; }
         .dropdown-btn { background-color: white; color: #2d5016; padding: 0.75rem 1.5rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; }
         .dropdown-content { display: none; position: absolute; background-color: white; min-width: 220px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); z-index: 10; border-radius: 8px; margin-top: 5px; }
@@ -24,14 +22,15 @@
 
         .contact-btn { background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; }
 
-        /* Content Layout (Standardized 1000px) */
+        /* Content Width Matched to Andy's Xpress (1000px) */
         .content-container { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
         .page-title { font-size: 2.5rem; color: #2d5016; text-align: center; margin-bottom: 0.5rem; }
         .company-name { font-size: 1.25rem; color: #666; text-align: center; margin-bottom: 3rem; }
 
-        /* Card Styles */
-        .info-card { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2rem; }
-        .info-card h2 { color: #2d5016; font-size: 1.8rem; margin-bottom: 1.2rem; border-bottom: 3px solid #2d5016; display: inline-block; padding-bottom: 5px; }
+        /* Standardized Section Cards */
+        .tax-labor-section { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2rem; }
+        .tax-labor-section h2 { color: #2d5016; font-size: 1.8rem; margin-bottom: 1.2rem; border-bottom: 3px solid #2d5016; display: inline-block; padding-bottom: 5px; }
+        .tax-labor-section p { margin-bottom: 1rem; color: #444; }
 
         /* Document List Styling */
         .doc-list { list-style: none; margin-top: 1.5rem; }
@@ -39,83 +38,3 @@
             display: flex; align-items: center; padding: 1.2rem; background: white; border: 1px solid #e0e0e0; 
             border-radius: 8px; margin-bottom: 0.75rem; text-decoration: none; color: #333; 
             transition: all 0.2s; border-left: 6px solid #2d5016; font-weight: 500;
-        }
-        .doc-item:hover { transform: translateX(5px); box-shadow: 0 2px 8px rgba(0,0,0,0.05); background-color: #f9f9f9; }
-        .doc-icon { margin-right: 15px; opacity: 0.4; }
-
-        /* Footer Button */
-        .back-resources-btn { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 8px; margin-top: 2rem; font-weight: 500; }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html">
-                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
-            </a>
-            <div class="nav-menu">
-                <div class="dropdown">
-                    <button class="dropdown-btn">Select Company ▼</button>
-                    <div class="dropdown-content">
-                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                        <a href="ampm.html">AMPM</a>
-                        <a href="archibalds.html">Archibald's</a>
-                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
-                    </div>
-                </div>
-                <a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="content-container">
-        <h1 class="page-title">Tax and Labor Law Information</h1>
-        <p class="company-name">AMPM</p>
-
-        <div class="info-card">
-            <h2>Labor Law Postings</h2>
-            <p>Required workplace notices and labor law information.</p>
-            <div class="doc-list">
-                <a href="docs/know-your-rights-notice-english.pdf" class="doc-item">
-                    <span class="doc-icon">⚖️</span> Know Your Rights Notice (English)
-                </a>
-                <a href="docs/know-your-rights-notice-spanish.pdf" class="doc-item">
-                    <span class="doc-icon">⚖️</span> Know Your Rights Notice (Spanish)
-                </a>
-                <a href="docs/sexual-harassment-fact-sheet.pdf" class="doc-item">
-                    <span class="doc-icon">⚖️</span> Sexual Harassment Fact Sheet
-                </a>
-            </div>
-        </div>
-
-        <div class="info-card">
-            <h2>Tax Forms</h2>
-            <p>Click on any form below to view or download:</p>
-            <div class="doc-list">
-                <a href="docs/w-4-form-english-2026.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> W-4 Form (English) - 2026
-                </a>
-                <a href="docs/w-4-form-spanish-2026.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> W-4 Form (Spanish) - 2026
-                </a>
-                <a href="docs/edd-form-de-4-english-2026.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> EDD Form DE 4 (English) - 2026
-                </a>
-                <a href="docs/edd-form-de-4-spanish-2026.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> EDD Form DE 4 (Spanish) - 2026
-                </a>
-                <a href="docs/i-9-employment-eligibility-verification-english.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (English)
-                </a>
-                <a href="docs/i-9-employment-eligibility-verification-spanish.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (Spanish)
-                </a>
-            </div>
-        </div>
-
-        <a href="ampm.html" class="back-resources-btn">← Back to Resources</a>
-    </div>
-
-</body>
-</html>
