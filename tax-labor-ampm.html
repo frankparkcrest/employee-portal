@@ -38,3 +38,77 @@
             display: flex; align-items: center; padding: 1.2rem; background: white; border: 1px solid #e0e0e0; 
             border-radius: 8px; margin-bottom: 0.75rem; text-decoration: none; color: #333; 
             transition: all 0.2s; border-left: 6px solid #2d5016; font-weight: 500;
+        }
+        .doc-item:hover { transform: translateX(5px); box-shadow: 0 2px 8px rgba(0,0,0,0.05); background-color: #f9f9f9; }
+        .doc-icon { margin-right: 15px; opacity: 0.4; }
+
+        .back-resources-btn { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 8px; margin-top: 2rem; font-weight: 500; }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Select Company ▼</button>
+                    <div class="dropdown-content">
+                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
+                        <a href="ampm.html">AMPM</a>
+                        <a href="archibalds.html">Archibald's</a>
+                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
+                    </div>
+                </div>
+                <a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="content-container">
+        <h1 class="page-title">Tax and Labor Law Information</h1>
+        <p class="company-name">AMPM</p>
+
+        <div class="tax-labor-section">
+            <h2>Tax Forms & Requirements</h2>
+            <p>Federal and state regulations require all employees to maintain updated tax withholding forms (W-4 and DE-4) and employment eligibility verification (I-9).</p>
+            <p>Download and review the forms below for current 2026 requirements:</p>
+            
+            <div class="doc-list">
+                <a href="docs/w-4-form-english-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> W-4 Form (English) - 2026</a>
+                <a href="docs/w-4-form-spanish-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> W-4 Form (Spanish) - 2026</a>
+                <a href="docs/edd-form-de-4-english-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> EDD Form DE 4 (English) - 2026</a>
+                <a href="docs/edd-form-de-4-spanish-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> EDD Form DE 4 (Spanish) - 2026</a>
+                <a href="docs/i-9-employment-eligibility-verification-english.pdf" class="doc-item"><span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (English)</a>
+                <a href="docs/i-9-employment-eligibility-verification-spanish.pdf" class="doc-item"><span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (Spanish)</a>
+            </div>
+        </div>
+
+        <div class="tax-labor-section">
+            <h2>Labor Laws & Employee Rights</h2>
+            <p>Employees are protected under federal and state labor laws, including regulations regarding minimum wage, overtime pay, meal and rest breaks, and anti-discrimination policies.</p>
+            <p>Review the following notices to understand your workplace protections:</p>
+            
+            <div class="doc-list">
+                <a href="docs/know-your-rights-notice-english.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Know Your Rights Notice (English)</a>
+                <a href="docs/know-your-rights-notice-spanish.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Know Your Rights Notice (Spanish)</a>
+                <a href="docs/sexual-harassment-fact-sheet.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Sexual Harassment Fact Sheet</a>
+            </div>
+        </div>
+
+        <div class="tax-labor-section">
+            <h2>Required Postings & Notices</h2>
+            <p>Workplace notices are legally required to be accessible to all employees. These include information on workplace safety, sick leave policies, and family rights acts.</p>
+            
+            <div class="doc-list">
+                <a href="docs/sick-leave-policy.pdf" class="doc-item"><span class="doc-icon">📋</span> Sick Leave Policy</a>
+                <a href="docs/ca-family-rights-act.pdf" class="doc-item"><span class="doc-icon">📋</span> CA Family Rights Act</a>
+                <a href="docs/ca-paid-family-leave.pdf" class="doc-item"><span class="doc-icon">📋</span> CA Paid Family Leave</a>
+            </div>
+        </div>
+
+        <a href="ampm.html" class="back-resources-btn">← Back to Resources</a>
+    </div>
+
+</body>
+</html>
