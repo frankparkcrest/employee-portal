@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Benefits - Andy's Xpress Wash</title>
     <style>
+        /* Uniform Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -12,13 +13,13 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background-color: #f0f0f0;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
+        /* Standardized Navigation Bar */
         .navbar {
             background-color: white;
             padding: 1.5rem 0;
@@ -34,11 +35,6 @@
             align-items: center;
         }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-        }
-
         .nav-logo-img {
             height: 60px;
             width: auto;
@@ -50,7 +46,7 @@
             align-items: center;
         }
 
-        /* Dropdown */
+        /* Standardized Dropdown */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -60,17 +56,10 @@
             background-color: white;
             color: #2d5016;
             padding: 0.75rem 1.5rem;
-            font-size: 1rem;
             border: 2px solid #2d5016;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 500;
-            transition: all 0.3s ease;
-        }
-
-        .dropdown-btn:hover {
-            background-color: #2d5016;
-            color: white;
         }
 
         .dropdown-content {
@@ -78,11 +67,10 @@
             position: absolute;
             background-color: white;
             min-width: 220px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            z-index: 10;
             border-radius: 8px;
-            margin-top: 0.5rem;
-            overflow: hidden;
+            margin-top: 5px;
         }
 
         .dropdown-content a {
@@ -90,11 +78,6 @@
             padding: 12px 16px;
             text-decoration: none;
             display: block;
-            transition: background-color 0.2s;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
         }
 
         .dropdown:hover .dropdown-content {
@@ -108,16 +91,11 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 500;
-            transition: background-color 0.3s;
         }
 
-        .contact-btn:hover {
-            background-color: #3d6b1f;
-        }
-
-        /* Main Content */
+        /* Uniform Content Width (Matched to AMPM) */
         .content-container {
-            max-width: 1200px;
+            max-width: 1000px; /* Fixed width for uniformity */
             margin: 3rem auto;
             padding: 0 2rem;
         }
@@ -125,167 +103,97 @@
         .page-title {
             font-size: 2.5rem;
             color: #2d5016;
-            margin-bottom: 0.5rem;
             text-align: center;
+            margin-bottom: 0.5rem;
         }
 
-        .company-subtitle {
+        .company-name {
             font-size: 1.25rem;
             color: #666;
-            margin-bottom: 3rem;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
-        /* Content Sections */
-        .content-section {
+        /* Standardized Information Cards */
+        .info-card {
             background: white;
             padding: 2.5rem;
             border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .section-title {
-            font-size: 2rem;
+        .info-card h2 {
             color: #2d5016;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            border-bottom: 3px solid #2d5016;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .info-card p {
             margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 4px solid #2d5016;
+            color: #444;
         }
 
-        .section-text {
-            color: #666;
-            font-size: 1.1rem;
-            line-height: 1.8;
+        /* Document Links (Simplified & Lowercase) */
+        .doc-list {
+            list-style: none;
+            margin-top: 1.5rem;
         }
 
-        /* Documents Section */
-        .documents-section {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .documents-title {
-            font-size: 2rem;
-            color: #2d5016;
-            margin-bottom: 1rem;
-        }
-
-        .documents-intro {
-            color: #666;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-        }
-
-        .document-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .document-item {
+        .doc-item {
             display: flex;
             align-items: center;
-            padding: 1.25rem 1.5rem;
+            padding: 1.2rem;
             background: white;
-            border: 2px solid #e0e0e0;
-            border-left: 5px solid #2d5016;
+            border: 1px solid #e0e0e0;
             border-radius: 8px;
+            margin-bottom: 0.75rem;
             text-decoration: none;
             color: #333;
-            transition: all 0.3s ease;
-        }
-
-        .document-item:hover {
-            background-color: #f9f9f9;
-            border-left-width: 8px;
-            transform: translateX(5px);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .document-icon {
-            font-size: 1.5rem;
-            margin-right: 1rem;
-            color: #2d5016;
-        }
-
-        .document-name {
-            font-size: 1.1rem;
+            transition: all 0.2s;
+            border-left: 6px solid #2d5016;
             font-weight: 500;
         }
 
-        /* Back Button */
-        .back-button {
+        .doc-item:hover {
+            background-color: #f9f9f9;
+            transform: translateX(5px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .doc-icon {
+            margin-right: 15px;
+            opacity: 0.4;
+        }
+
+        /* Standardized Footer Button */
+        .back-resources-btn {
             display: inline-flex;
             align-items: center;
             background-color: #2d5016;
             color: white;
-            padding: 0.75rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             text-decoration: none;
             border-radius: 8px;
-            font-weight: 500;
-            transition: background-color 0.3s;
             margin-top: 2rem;
+            font-weight: 500;
         }
 
-        .back-button:hover {
+        .back-resources-btn:hover {
             background-color: #3d6b1f;
-        }
-
-        .back-arrow {
-            margin-right: 0.5rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .nav-menu {
-                flex-direction: column;
-                width: 100%;
-            }
-
-            .dropdown, .contact-btn {
-                width: 100%;
-            }
-
-            .dropdown-btn, .contact-btn {
-                width: 100%;
-                text-align: center;
-            }
-
-            .page-title {
-                font-size: 2rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
-            }
-
-            .content-section {
-                padding: 1.5rem;
-            }
-
-            .documents-section {
-                padding: 1.5rem;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html">
                 <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
             </a>
-            
             <div class="nav-menu">
                 <div class="dropdown">
                     <button class="dropdown-btn">Select Company ▼</button>
@@ -296,96 +204,64 @@
                         <a href="parkcrest-properties.html">Parkcrest Properties</a>
                     </div>
                 </div>
-                
                 <a href="contact-form-andys.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="content-container">
         <h1 class="page-title">Employee Benefits</h1>
-        <p class="company-subtitle">Andy's Xpress Wash</p>
+        <p class="company-name">Andy's Xpress Wash</p>
 
-        <!-- Eligibility Section -->
-        <div class="content-section">
-            <h2 class="section-title">Eligibility</h2>
-            <p class="section-text">
-                Eligibility depends on your role, hours worked, and length of employment.
-                <br><br>
-                Some benefits are required by law and apply to all employees, while others vary by employment status.
-                <br><br>
-                See the <strong>Benefits Documents</strong> section below for official eligibility details.
-            </p>
+        <div class="info-card">
+            <h2>Eligibility</h2>
+            <p>Eligibility depends on your role, hours worked, and length of employment.</p>
+            <p>Some benefits are required by law and apply to all employees, while others vary by employment status.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for official eligibility details.</p>
         </div>
 
-        <!-- What's Offered Section -->
-        <div class="content-section">
-            <h2 class="section-title">What's Offered</h2>
-            <p class="section-text">
-                Andy's Xpress Wash provides legally required employee benefits and protections, plus additional programs based on eligibility.
-                <br><br>
-                Benefits may include health coverage, paid leave, retirement savings, and workplace notices.
-                <br><br>
-                See the <strong>Benefits Documents</strong> section below for complete details.
-            </p>
+        <div class="info-card">
+            <h2>What's Offered</h2>
+            <p>Andy's Xpress Wash provides legally required employee benefits and protections, plus additional programs based on eligibility.</p>
+            <p>Benefits may include health coverage, paid leave, retirement savings, and workplace notices.</p>
+            <p>See the <strong>Benefits Documents</strong> section below for complete details.</p>
         </div>
 
-        <!-- Enrollment & Contacts Section -->
-        <div class="content-section">
-            <h2 class="section-title">Enrollment & Contacts</h2>
-            <p class="section-text">
-                Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR.
-                <br><br>
-                Review the <strong>Benefits Documents</strong> section below for required forms and program information.
-                <br><br>
-                Use the <strong>Contact Form</strong> above if you need additional help.
-            </p>
+        <div class="info-card">
+            <h2>Enrollment & Contacts</h2>
+            <p>Enrollment details vary by role and location. Eligible employees will receive instructions from management or HR.</p>
+            <p>Review the <strong>Benefits Documents</strong> section below for required forms and program information.</p>
+            <p>Use the <strong>Contact Form</strong> above if you need additional help.</p>
         </div>
 
-        <!-- Benefits Documents Section -->
-        <div class="documents-section">
-            <h2 class="documents-title">Benefits Documents</h2>
-            <p class="documents-intro">Click on any document below to view or download:</p>
+        <div class="info-card">
+            <h2 style="border-bottom: none;">Benefits Documents</h2>
+            <p>Click on any document below to view or download:</p>
             
-            <div class="document-list">
-                <a href="docs/cal-saver-employee-benefit.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Saver Employee Benefit</span>
+            <div class="doc-list">
+                <a href="docs/cal-saver-employee-benefit.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Saver Employee Benefit
                 </a>
-                
-                <a href="docs/cal-savers-program-disclosure.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Savers Program Disclosure</span>
+                <a href="docs/cal-savers-program-disclosure.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Savers Program Disclosure
                 </a>
-                
-                <a href="docs/cal-savers-overview.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Cal Savers Overview</span>
+                <a href="docs/cal-savers-overview.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Cal Savers Overview
                 </a>
-                
-                <a href="docs/health-coverage.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">Health Coverage</span>
+                <a href="docs/health-coverage.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> Health Coverage
                 </a>
-                
-                <a href="docs/ca-paid-family-leave.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">CA Paid Family Leave</span>
+                <a href="docs/ca-paid-family-leave.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA Paid Family Leave
                 </a>
-                
-                <a href="docs/ca-family-rights-act.pdf" class="document-item" target="_blank">
-                    <span class="document-icon">📄</span>
-                    <span class="document-name">CA Family Rights Act</span>
+                <a href="docs/ca-family-rights-act.pdf" class="doc-item">
+                    <span class="doc-icon">📄</span> CA Family Rights Act
                 </a>
             </div>
         </div>
 
-        <!-- Back Button -->
-        <a href="andys-xpress-wash.html" class="back-button">
-            <span class="back-arrow">←</span>
-            Back to Resources
-        </a>
+        <a href="andys-xpress-wash.html" class="back-resources-btn">← Back to Resources</a>
     </div>
+
 </body>
 </html>
