@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tax and Labor Law Information - AMPM</title>
     <style>
-        /* Global Styles */
+        /* Global Standardized Styles */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
 
-        /* Unified Navigation Bar */
+        /* Unified Navigation Bar Fix */
         .navbar { background-color: white; padding: 1.5rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
         .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
         .nav-logo-img { height: 60px; width: auto; }
@@ -23,93 +23,26 @@
 
         .contact-btn { background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; }
 
-        /* Content Width Matched to Andy's Xpress (1000px) */
-        .content-container { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
+        /* CONTENT WIDTH STANDARDIZATION (1000px) */
+        .content-container { 
+            max-width: 1000px; 
+            margin: 3rem auto; 
+            padding: 0 2rem; 
+        }
+
         .page-title { font-size: 2.5rem; color: #2d5016; text-align: center; margin-bottom: 0.5rem; }
         .company-name { font-size: 1.25rem; color: #666; text-align: center; margin-bottom: 3rem; }
 
-        /* Section Card Styles */
-        .tax-labor-section { background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); margin-bottom: 2rem; }
-        .tax-labor-section h2 { color: #2d5016; font-size: 1.8rem; margin-bottom: 1.2rem; border-bottom: 3px solid #2d5016; display: inline-block; padding-bottom: 5px; }
-        .tax-labor-section p { margin-bottom: 1rem; color: #444; }
-
-        /* Document List Styling */
-        .doc-list { list-style: none; margin-top: 1.5rem; }
-        .doc-item { 
-            display: flex; align-items: center; padding: 1.2rem; background: white; border: 1px solid #e0e0e0; 
-            border-radius: 8px; margin-bottom: 0.75rem; text-decoration: none; color: #333; 
-            transition: all 0.2s; border-left: 6px solid #2d5016; font-weight: 500;
+        /* Uniform Card Styles */
+        .tax-labor-section { 
+            background: white; 
+            padding: 2.5rem; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08); 
+            margin-bottom: 2rem; 
         }
-        .doc-item:hover { transform: translateX(5px); box-shadow: 0 2px 8px rgba(0,0,0,0.05); background-color: #f9f9f9; }
-        .doc-icon { margin-right: 15px; opacity: 0.4; }
-
-        .back-resources-btn { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.8rem 1.8rem; text-decoration: none; border-radius: 8px; margin-top: 2rem; font-weight: 500; }
-    </style>
-</head>
-<body>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html">
-                <img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img">
-            </a>
-            <div class="nav-menu">
-                <div class="dropdown">
-                    <button class="dropdown-btn">Select Company ▼</button>
-                    <div class="dropdown-content">
-                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                        <a href="ampm.html">AMPM</a>
-                        <a href="archibalds.html">Archibald's</a>
-                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
-                    </div>
-                </div>
-                <a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
-            </div>
-        </div>
-    </nav>
-
-    <div class="content-container">
-        <h1 class="page-title">Tax and Labor Law Information</h1>
-        <p class="company-name">AMPM</p>
-
-        <div class="tax-labor-section">
-            <h2>Tax Forms & Requirements</h2>
-            <p>Federal and state regulations require all employees to maintain updated tax withholding forms (W-4 and DE-4) and employment eligibility verification (I-9).</p>
-            <p>Review the forms below to ensure compliance with 2026 tax withholding standards.</p>
-        </div>
-
-        <div class="tax-labor-section">
-            <h2>Labor Laws & Employee Rights</h2>
-            <p>Employees are protected under federal and state labor laws, including regulations regarding minimum wage, overtime pay, and anti-discrimination policies.</p>
-            <p>Access the notices below to understand your workplace rights and protections.</p>
-        </div>
-
-        <div class="tax-labor-section">
-            <h2>Required Postings & Notices</h2>
-            <p>California law requires specific workplace posters to be conspicuously displayed or accessible to all employees at all times.</p>
-            <p>These documents provide information on workplace safety, sick leave, and family rights.</p>
-        </div>
-
-        <div class="tax-labor-section">
-            <h2 style="border-bottom: none;">Tax and Labor Documents</h2>
-            <p>Click on any document below to view or download:</p>
-            
-            <div class="doc-list">
-                <a href="docs/w-4-form-english-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> W-4 Form (English) - 2026</a>
-                <a href="docs/w-4-form-spanish-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> W-4 Form (Spanish) - 2026</a>
-                <a href="docs/edd-form-de-4-english-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> EDD Form DE 4 (English) - 2026</a>
-                <a href="docs/edd-form-de-4-spanish-2026.pdf" class="doc-item"><span class="doc-icon">📄</span> EDD Form DE 4 (Spanish) - 2026</a>
-                <a href="docs/i-9-employment-eligibility-verification-english.pdf" class="doc-item"><span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (English)</a>
-                <a href="docs/i-9-employment-eligibility-verification-spanish.pdf" class="doc-item"><span class="doc-icon">📄</span> I-9 Employment Eligibility Verification (Spanish)</a>
-                <a href="docs/know-your-rights-notice-english.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Know Your Rights Notice (English)</a>
-                <a href="docs/know-your-rights-notice-spanish.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Know Your Rights Notice (Spanish)</a>
-                <a href="docs/sexual-harassment-fact-sheet.pdf" class="doc-item"><span class="doc-icon">⚖️</span> Sexual Harassment Fact Sheet</a>
-                <a href="docs/sick-leave-policy.pdf" class="doc-item"><span class="doc-icon">📋</span> Sick Leave Policy</a>
-            </div>
-        </div>
-
-        <a href="ampm.html" class="back-resources-btn">← Back to Resources</a>
-    </div>
-
-</body>
-</html>
+        .tax-labor-section h2 { 
+            color: #2d5016; 
+            font-size: 1.8rem; 
+            margin-bottom: 1.2rem; 
+            border-
