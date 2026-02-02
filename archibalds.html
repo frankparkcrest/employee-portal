@@ -1,80 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Archibald’s Compliance</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 40px;
-      background: #ffffff;
-      color: #000;
-    }
-
-    h1 {
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      cursor: pointer;
-      border-bottom: 2px solid #000;
-      padding-bottom: 6px;
-      margin-top: 40px;
-    }
-
-    ul {
-      list-style: disc;
-      padding-left: 20px;
-      margin-top: 15px;
-    }
-
-    li {
-      margin: 6px 0;
-    }
-
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Archibald's - Employee Portal</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background-color: #f0f0f0; color: #333; line-height: 1.6; }
+        .navbar { background-color: white; padding: 1rem 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo-img { height: 50px; width: auto; }
+        .nav-menu { display: flex; gap: 0.75rem; align-items: center; }
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-btn { background-color: white; color: #2d5016; padding: 0.625rem 1rem; font-size: 0.9rem; border: 2px solid #2d5016; border-radius: 8px; cursor: pointer; font-weight: 500; transition: all 0.3s ease; }
+        .dropdown-btn:hover { background-color: #2d5016; color: white; }
+        .dropdown-content { display: none; position: absolute; background-color: white; min-width: 200px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); z-index: 1000; border-radius: 8px; margin-top: 0.5rem; overflow: hidden; right: 0; }
+        .dropdown-content a { color: #333; padding: 12px 16px; text-decoration: none; display: block; }
+        .dropdown:hover .dropdown-content { display: block; }
+        .contact-btn { background-color: #2d5016; color: white; padding: 0.625rem 1rem; text-decoration: none; border-radius: 8px; font-weight: 500; font-size: 0.9rem; }
+        .content-container { max-width: 1200px; margin: 3rem auto; padding: 0 2rem; }
+        .company-title { font-size: 2.5rem; color: #2d5016; margin-bottom: 0.5rem; text-align: center; }
+        .company-subtitle { font-size: 1.25rem; color: #666; margin-bottom: 3rem; text-align: center; }
+        .resources-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .resource-card { background: white; padding: 2rem; border-radius: 12px; text-decoration: none; color: inherit; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s ease; border: 2px solid transparent; text-align: center; display: flex; flex-direction: column; align-items: center; }
+        .resource-card:hover { transform: translateY(-4px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); border-color: #2d5016; }
+        .resource-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .resource-card h2 { color: #2d5016; font-size: 1.5rem; margin-bottom: 0.5rem; }
+        .resource-card p { color: #666; font-size: 1rem; margin: 0; }
+        .back-button { display: inline-flex; align-items: center; background-color: #2d5016; color: white; padding: 0.75rem 1.5rem; text-decoration: none; border-radius: 8px; font-weight: 500; margin-top: 2rem; }
+    </style>
 </head>
-
 <body>
-
-  <h1>Compliance Information</h1>
-
-  <!-- TAX CATEGORY -->
-  <h2 onclick="toggleLinks('tax')">Tax Information</h2>
-  <ul id="tax" style="display:none;">
-    <li><a href="https://www.irs.gov" target="_blank">Internal Revenue Service (IRS)</a></li>
-    <li><a href="https://www.ftb.ca.gov" target="_blank">California Franchise Tax Board</a></li>
-    <li><a href="https://www.cdtfa.ca.gov" target="_blank">California Dept. of Tax and Fee Administration</a></li>
-    <li><a href="https://www.edd.ca.gov/Payroll_Taxes/" target="_blank">EDD – Payroll Taxes</a></li>
-  </ul>
-
-  <!-- LABOR CATEGORY -->
-  <h2 onclick="toggleLinks('labor')">Labor Information</h2>
-  <ul id="labor" style="display:none;">
-    <li><a href="https://www.dir.ca.gov" target="_blank">California Department of Industrial Relations</a></li>
-    <li><a href="https://www.dol.gov" target="_blank">U.S. Department of Labor</a></li>
-    <li><a href="https://www.osha.gov" target="_blank">OSHA – Workplace Safety</a></li>
-    <li><a href="https://www.dir.ca.gov/dlse/" target="_blank">DLSE – Wage & Hour Laws</a></li>
-    <li><a href="https://calcivilrights.ca.gov" target="_blank">California Civil Rights Department</a></li>
-  </ul>
-
-  <script>
-    function toggleLinks(id) {
-      const el = document.getElementById(id);
-      el.style.display = el.style.display === 'none' ? 'block' : 'none';
-    }
-  </script>
-
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
+            </a>
+            <div class="nav-menu">
+                <div class="dropdown">
+                    <button class="dropdown-btn">Select Company ▼</button>
+                    <div class="dropdown-content">
+                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
+                        <a href="ampm.html">AMPM</a>
+                        <a href="archibalds.html">Archibald's</a>
+                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
+                    </div>
+                </div>
+                <a href="contact-form-archibalds.html" class="contact-btn">Contact Form</a>
+            </div>
+        </div>
+    </nav>
+    <div class="content-container">
+        <h1 class="company-title">Archibald's</h1>
+        <p class="company-subtitle">Employee Resources</p>
+        <div class="resources-grid">
+            <a href="benefits-archibalds.html" class="resource-card">
+                <div class="resource-icon">📋</div>
+                <h2>Employee Benefit Docs</h2>
+                <p>Access your benefits information and documentation</p>
+            </a>
+            <a href="tax-labor-archibalds.html" class="resource-card">
+                <div class="resource-icon">⚖️</div>
+                <h2>Tax and Labor Law Info</h2>
+                <p>View tax documents and labor law information</p>
+            </a>
+        </div>
+        <a href="index.html" class="back-button">← Back to Homepage</a>
+    </div>
 </body>
 </html>
