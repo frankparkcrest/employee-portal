@@ -1,196 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Form - Parkcrest Properties</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            background-color: white;
-            padding: 1.5rem 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo-img {
-            height: 60px;
-            width: auto;
-        }
-
-        .nav-menu {
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-        }
-
-        .dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .dropdown-btn {
-            background-color: white;
-            color: #2d5016;
-            padding: 0.75rem 1.5rem;
-            border: 2px solid #2d5016;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1;
-            border-radius: 8px;
-            overflow: hidden;
-            margin-top: 0.5rem;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.3s;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        .contact-btn {
-            background-color: #2d5016;
-            color: white;
-            padding: 0.75rem 1.5rem;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        /* Form Container */
-        .form-container {
-            max-width: 800px;
-            margin: 60px auto;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .form-container h1 {
-            color: #2d5016;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-
-        .form-container p {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 1.1rem;
-        }
-
-        .google-form-wrapper {
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-
-        .google-form-wrapper iframe {
-            width: 100%;
-            max-width: 100%;
-            border: none;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 30px;
-            background: #2d5016;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-        }
-
-        .back-link:hover {
-            background: #3d6921;
-        }
-
-        @media (max-width: 768px) {
-            .form-container h1 {
-                font-size: 2rem;
-            }
-            
-            .google-form-wrapper {
-                padding: 10px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parkcrest Properties - Contact Form</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:#f0f0f0;color:#333}
+.navbar{background:#fff;padding:1.5rem 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
+.nav-logo-img{height:60px}
+.nav-menu{display:flex;gap:1rem;align-items:center}
+.dropdown-btn{background:#fff;color:#2d5016;padding:.75rem 1.5rem;border:2px solid #2d5016;border-radius:8px;cursor:pointer;font-weight:500}
+.contact-btn{background:#2d5016;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;font-weight:500}
+.dropdown{position:relative}
+.dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);z-index:9999}
+.dropdown-content a{display:block;padding:12px 14px;color:#333;text-decoration:none;font-weight:500}
+.dropdown-content a:hover{background:#f4f4f4}
+.dropdown.open .dropdown-content{display:block}
+.content-container{max-width:900px;margin:3rem auto;padding:0 2rem}
+.form-title{text-align:center;color:#2d5016;font-size:2.2rem}
+.form-subtitle{text-align:center;color:#666;margin-bottom:2rem}
+.form-card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+label{display:block;font-weight:600;margin:.85rem 0 .35rem;color:#2d5016}
+input[type=text],input[type=email],input[type=tel],textarea,select{width:100%;padding:.85rem 1rem;border:1px solid #ddd;border-radius:10px;font-size:1rem}
+textarea{min-height:160px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.radio-group{display:grid;gap:.5rem}
+.radio-item{display:flex;gap:.5rem;align-items:center;justify-content:flex-start}
+input[type=radio]{width:auto;padding:0;border-radius:50%;accent-color:#2d5016}
+.submit-btn{width:100%;margin-top:1.25rem;background:#2d5016;color:#fff;padding:.9rem;border:none;border-radius:10px;font-weight:700;cursor:pointer}
+.back-btn{display:inline-flex;margin-top:1.5rem;background:#2d5016;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px}
+@media(max-width:768px){.form-row{grid-template-columns:1fr}}
+</style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="index.html" class="nav-logo">
-                <img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img">
-            </a>
-            
-            <div class="nav-menu">
-                <div class="dropdown">
-                    <button class="dropdown-btn">Select Company ▼</button>
-                    <div class="dropdown-content">
-                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                        <a href="ampm.html">AMPM</a>
-                        <a href="archibalds.html">Archibald's</a>
-                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
-                    </div>
-                </div>
-                
-                <a href="contact-form-parkcrest.html" class="contact-btn">Contact Form</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Form Content -->
-    <div class="form-container">
-        <h1>Submit a Complaint</h1>
-        <p>Please fill out the form below to submit your complaint or inquiry.</p>
+<nav class="navbar">
+<div class="nav-container">
+<a href="index.html"><img src="assets/parkcrest-properties-logo.png" class="nav-logo-img"></a>
+<div class="nav-menu">
+<div class="dropdown">
+<button class="dropdown-btn" type="button">Select Company ▼</button>
+<div class="dropdown-content">
+<a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
+<a href="ampm.html">AMPM</a>
+<a href="archibalds.html">Archibald's</a>
+<a href="parkcrest-properties.html">Parkcrest Properties</a>
+</div>
+</div>
+<a href="contact-form-parkcrest.html" class="contact-btn">Contact Form</a>
+</div>
+</div>
+</nav>
 
-        <div class="google-form-wrapper">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJXIk7xI0J4kTstxbTNIqKH86bRUSC5DNRO46mSHL1y8L9yw/viewform?embedded=true" width="640" height="1775" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-        </div>
+<div class="content-container">
+<h1 class="form-title">Contact Form</h1>
+<p class="form-subtitle">Parkcrest Properties</p>
 
-        <a href="parkcrest-properties.html" class="back-link">← Back to Resources</a>
+<div class="form-card">
+<form action="https://formspree.io/f/mwvqgkgj" method="POST">
+<label>Company</label>
+<select name="company" required>
+<option>Parkcrest Properties</option>
+<option>AMPM</option>
+<option>Archibald's</option>
+<option>Andy's Xpress Wash</option>
+<option>Parkcrest Properties</option>
+</select>
+
+<div class="form-row">
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email address">
     </div>
+    <div>
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="Phone number">
+    </div>
+</div>
+
+<div>
+    <label>Name</label>
+    <input type="text" name="name" required>
+</div>
+
+<label>Subject</label>
+<input type="text" name="subject" required>
+
+<label>Message</label>
+<textarea name="message" required></textarea>
+
+<label>Priority</label>
+<select name="priority" required>
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+
+<label>Would you like a corporate representative to follow up?</label>
+<div class="radio-group">
+<label class="radio-item"><input type="radio" name="follow_up" value="Yes" required> Yes, please follow up</label>
+<label class="radio-item"><input type="radio" name="follow_up" value="No" required> No, this is an anonymous submission</label>
+</div>
+
+<button class="submit-btn" type="submit">Send</button>
+</form>
+</div>
+
+<a href="parkcrest-properties.html" class="back-btn">← Back</a>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+const d=document.querySelector(".dropdown");
+const b=document.querySelector(".dropdown-btn");
+b.addEventListener("click",e=>{e.stopPropagation();d.classList.toggle("open")});
+document.addEventListener("click",()=>d.classList.remove("open"));
+});
+</script>
+
 </body>
 </html>
