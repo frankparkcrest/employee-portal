@@ -23,11 +23,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubunt
 .form-subtitle{text-align:center;color:#666;margin-bottom:2rem}
 .form-card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
 label{display:block;font-weight:600;margin:.85rem 0 .35rem;color:#2d5016}
-input,textarea,select{width:100%;padding:.85rem 1rem;border:1px solid #ddd;border-radius:10px;font-size:1rem}
+input[type=text],input[type=email],input[type=tel],textarea,select{width:100%;padding:.85rem 1rem;border:1px solid #ddd;border-radius:10px;font-size:1rem}
 textarea{min-height:160px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .radio-group{display:grid;gap:.5rem}
-.radio-item{display:flex;gap:.5rem}
+.radio-item{display:flex;gap:.5rem;align-items:center;justify-content:flex-start}
+input[type=radio]{width:auto;padding:0;border-radius:50%;accent-color:#2d5016}
 .submit-btn{width:100%;margin-top:1.25rem;background:#2d5016;color:#fff;padding:.9rem;border:none;border-radius:10px;font-weight:700;cursor:pointer}
 .back-btn{display:inline-flex;margin-top:1.5rem;background:#2d5016;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px}
 @media(max-width:768px){.form-row{grid-template-columns:1fr}}
