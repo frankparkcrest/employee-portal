@@ -69,18 +69,23 @@ input[type=radio]{width:auto;padding:0;border-radius:50%;accent-color:#2d5016}
 </select>
 
 <div class="form-row">
-<div>
-<label>Name</label>
-<input name="name" required>
+    <div>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Email address">
+    </div>
+    <div>
+        <label>Phone</label>
+        <input type="tel" name="phone" placeholder="Phone number">
+    </div>
 </div>
+
 <div>
-<label>Email or Phone</label>
-<input name="contact" required>
-</div>
+    <label>Name</label>
+    <input type="text" name="name" required>
 </div>
 
 <label>Subject</label>
-<input name="subject" required>
+<input type="text" name="subject" required>
 
 <label>Message</label>
 <textarea name="message" required></textarea>
