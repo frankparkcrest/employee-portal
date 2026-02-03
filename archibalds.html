@@ -157,6 +157,44 @@
                 font-size: 2rem;
             }
         }
+    
+/* --- Dropdown menu (added for functionality) --- */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    min-width: 240px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    overflow: hidden;
+    z-index: 9999;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 14px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+    background: #f4f4f4;
+}
+
+.dropdown.open .dropdown-content {
+    display: block;
+}
+/* --- End dropdown menu --- */
     </style>
 </head>
 <body>
@@ -165,7 +203,16 @@
         <div class="nav-container">
             <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
             <div class="nav-menu">
-                <button class="dropdown-btn">Select Company ▼</button>
+                
+<div class="dropdown">
+    <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
+    <div class="dropdown-content" role="menu" aria-label="Company menu">
+        <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
+        <a href="ampm.html" role="menuitem">AMPM</a>
+        <a href="archibalds.html" role="menuitem">Archibald's</a>
+        <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
+    </div>
+</div>
                 <a href="contact-form-archibalds.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
@@ -192,5 +239,35 @@
         <a href="index.html" class="back-btn">← Back to Homepage</a>
     </div>
 
+
+<script>
+/* --- Dropdown menu JS (added for functionality) --- */
+document.addEventListener("DOMContentLoaded", function () {
+    var dropdown = document.querySelector(".dropdown");
+    if (!dropdown) return;
+
+    var btn = dropdown.querySelector(".dropdown-btn");
+    if (!btn) return;
+
+    btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var isOpen = dropdown.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            dropdown.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
+        }
+    });
+});
+/* --- End dropdown menu JS --- */
+</script>
 </body>
 </html>
