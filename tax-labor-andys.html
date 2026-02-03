@@ -166,13 +166,13 @@
         .back-btn:hover { background-color: #3d6b1f; }
     
 
-/* --- Dropdown fix (added) --- */
+/* --- Dropdown CSS fix (added) --- */
 .dropdown{position:relative;display:inline-block}
 .dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);overflow:hidden;z-index:9999}
 .dropdown-content a{display:block;padding:12px 14px;text-decoration:none;color:#333;font-weight:500;white-space:nowrap}
 .dropdown-content a:hover{background:#f4f4f4}
 .dropdown.open .dropdown-content{display:block}
-/* --- End dropdown fix --- */
+/* --- End dropdown CSS fix --- */
 </style>
 </head>
 <body>
@@ -258,5 +258,48 @@
         <a href="andys-xpress-wash.html" class="back-btn">← Back to Resources</a>
     </div>
 
+<script>
+/* --- Dropdown JS fix (added) --- */
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdowns = document.querySelectorAll(".dropdown");
+  dropdowns.forEach(function (dropdown) {
+    var btn = dropdown.querySelector(".dropdown-btn");
+    var menu = dropdown.querySelector(".dropdown-content");
+    if (!btn || !menu) return;
+
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      dropdowns.forEach(function (d) {
+        if (d !== dropdown) {
+          d.classList.remove("open");
+          var b = d.querySelector(".dropdown-btn");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      });
+      var isOpen = dropdown.classList.toggle("open");
+      btn.setAttribute("aria-expanded", String(isOpen));
+    });
+  });
+
+  document.addEventListener("click", function () {
+    dropdowns.forEach(function (d) {
+      d.classList.remove("open");
+      var b = d.querySelector(".dropdown-btn");
+      if (b) b.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      dropdowns.forEach(function (d) {
+        d.classList.remove("open");
+        var b = d.querySelector(".dropdown-btn");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    }
+  });
+});
+/* --- End dropdown JS fix --- */
+</script>
 </body>
 </html>
