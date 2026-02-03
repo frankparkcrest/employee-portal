@@ -195,102 +195,6 @@
     display: block;
 }
 /* --- End dropdown menu --- */
-    
-
-
-/* --- Simple Contact Form (added) --- */
-.form-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    margin-top: 2rem;
-}
-
-.form-title {
-    font-size: 1.5rem;
-    color: #2d5016;
-    margin-bottom: 0.5rem;
-}
-
-.form-help {
-    color: #666;
-    margin-bottom: 1.25rem;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-}
-
-label {
-    display: block;
-    font-weight: 600;
-    margin: 0.75rem 0 0.35rem;
-    color: #2d5016;
-}
-
-input, textarea, select {
-    width: 100%;
-    padding: 0.85rem 1rem;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    font-size: 1rem;
-    outline: none;
-    background: #fff;
-}
-
-textarea { min-height: 160px; resize: vertical; }
-
-input:focus, textarea:focus, select:focus {
-    border-color: rgba(45, 80, 22, 0.55);
-    box-shadow: 0 0 0 3px rgba(45, 80, 22, 0.10);
-}
-
-.radio-group {
-    display: grid;
-    gap: 0.5rem;
-    margin-top: 0.25rem;
-}
-
-.radio-item {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #333;
-    font-weight: 500;
-}
-
-.radio-item input {
-    width: auto;
-    padding: 0;
-    border-radius: 4px;
-}
-
-.submit-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    margin-top: 1rem;
-    background-color: #2d5016;
-    color: white;
-    padding: 0.9rem 1.2rem;
-    border: none;
-    border-radius: 10px;
-    font-weight: 700;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.submit-btn:hover { background-color: #3d6b1f; }
-
-@media (max-width: 768px) {
-    .form-row { grid-template-columns: 1fr; }
-}
-/* --- End Simple Contact Form --- */
-
     </style>
 </head>
 <body>
@@ -318,7 +222,7 @@ input:focus, textarea:focus, select:focus {
         <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
     </div>
 </div>
-                <a href="#contact" class="contact-btn">Contact Form</a>
+                <a href="contact-form-andys.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
@@ -340,62 +244,6 @@ input:focus, textarea:focus, select:focus {
                 <p>View tax documents and labor law information</p>
             </a>
         </div>
-
-<div id="contact" class="form-card">
-    <h2 class="form-title">Contact Form</h2>
-    <p class="form-help">Submit a message to corporate (no account required).</p>
-
-    <form action="https://formspree.io/f/mwvqgkgj" method="POST">
-        <label for="company">Select Company</label>
-        <select id="company" name="company" required>
-            <option value="Andy's Xpress Wash">Andy's Xpress Wash</option>
-            <option value="Archibald's">Archibald's</option>
-            <option value="AMPM">AMPM</option>
-            <option value="Andy's Xpress Wash">Andy's Xpress Wash</option>
-            <option value="Parkcrest Properties">Parkcrest Properties</option>
-        </select>
-
-        <div class="form-row">
-            <div>
-                <label for="name">Name</label>
-                <input id="name" type="text" name="name" placeholder="Your name" required>
-            </div>
-            <div>
-                <label for="contact">Email or Phone</label>
-                <input id="contactField" type="text" name="contact" placeholder="Email or phone number" required>
-            </div>
-        </div>
-
-        <label for="subject">Subject</label>
-        <input id="subject" type="text" name="subject" placeholder="What is this regarding?" required>
-
-        <label for="message">Message</label>
-        <textarea id="message" name="message" placeholder="Type your message..." required></textarea>
-
-        <label for="priority">Priority</label>
-        <select id="priority" name="priority" required>
-            <option value="Low">Low</option>
-            <option value="Medium">Medium</option>
-            <option value="High">High</option>
-        </select>
-
-        <label>Would you like a corporate representative to follow up with you directly (if Employee ID/Contact info is provided)?</label>
-        <div class="radio-group">
-            <label class="radio-item">
-                <input type="radio" name="follow_up" value="Yes, please follow up" required>
-                Yes, please follow up
-            </label>
-            <label class="radio-item">
-                <input type="radio" name="follow_up" value="No, this is an anonymous submission" required>
-                No, this is an anonymous submission
-            </label>
-        </div>
-
-        <button class="submit-btn" type="submit">Send</button>
-    </form>
-</div>
-
-
 
         <a href="index.html" class="back-btn">← Back to Homepage</a>
     </div>
