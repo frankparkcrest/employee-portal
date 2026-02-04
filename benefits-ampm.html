@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Employee Benefits - AMPM</title>
+
     <style>
         * {
             margin: 0;
@@ -32,11 +33,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
 
         .nav-logo-img {
             height: 60px;
             width: auto;
+            max-width: 260px;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-menu {
@@ -163,33 +168,96 @@
             font-weight: 500;
         }
 
-        .back-btn:hover { background-color: #3d6b1f; }
-    
+        .back-btn:hover {
+            background-color: #3d6b1f;
+        }
 
-/* --- Dropdown CSS fix (added) --- */
-.dropdown{position:relative;display:inline-block}
-.dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);overflow:hidden;z-index:9999}
-.dropdown-content a{display:block;padding:12px 14px;text-decoration:none;color:#333;font-weight:500;white-space:nowrap}
-.dropdown-content a:hover{background:#f4f4f4}
-.dropdown.open .dropdown-content{display:block}
-/* --- End dropdown CSS fix --- */
-</style>
+        /* --- Dropdown menu (added for functionality) --- */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 240px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+            z-index: 9999;
+        }
+
+        .dropdown-content a {
+            display: block;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .dropdown-content a:hover {
+            background: #f4f4f4;
+        }
+
+        .dropdown.open .dropdown-content {
+            display: block;
+        }
+        /* --- End dropdown menu --- */
+
+        /* ✅ Mobile navbar fix (prevents Contact Form cutoff) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+
+            .dropdown,
+            .dropdown-btn,
+            .contact-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-logo-img {
+                max-width: 210px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
+            <a href="index.html">
+                <img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img" />
+            </a>
+
             <div class="nav-menu">
                 <div class="dropdown">
-          <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
-          <div class="dropdown-content" role="menu" aria-label="Company menu">
-            <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
-            <a href="ampm.html" role="menuitem">AMPM</a>
-            <a href="archibalds.html" role="menuitem">Archibald's</a>
-            <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
-          </div>
-        </div>
+                    <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
+                    <div class="dropdown-content" role="menu" aria-label="Company menu">
+                        <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
+                        <a href="ampm.html" role="menuitem">AMPM</a>
+                        <a href="archibalds.html" role="menuitem">Archibald's</a>
+                        <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
+                    </div>
+                </div>
+
                 <a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
@@ -223,29 +291,15 @@
         <div class="docs-section">
             <h2>Benefits Documents</h2>
             <p>Click on any document below to view or download:</p>
-            
+
             <div class="doc-list">
-                <a href="docs/cal-saver-employee-benefit.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> Cal Saver Employee Benefit
-                </a>
-                <a href="docs/cal-savers-program-disclosure.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> Cal Savers Program Disclosure
-                </a>
-                <a href="docs/cal-savers-overview.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> Cal Savers Overview
-                </a>
-                <a href="docs/health-coverage.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> Health Coverage
-                </a>
-                <a href="docs/ca-paid-family-leave.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> CA Paid Family Leave
-                </a>
-                <a href="docs/ca-family-rights-act.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> CA Family Rights Act
-                </a>
-                <a href="docs/sick-leave-policy.pdf" class="doc-item">
-                    <span class="doc-icon">📄</span> Sick Leave Policy
-                </a>
+                <a href="docs/cal-saver-employee-benefit.pdf" class="doc-item"><span class="doc-icon">📄</span>Cal Saver Employee Benefit</a>
+                <a href="docs/cal-savers-program-disclosure.pdf" class="doc-item"><span class="doc-icon">📄</span>Cal Savers Program Disclosure</a>
+                <a href="docs/cal-savers-overview.pdf" class="doc-item"><span class="doc-icon">📄</span>Cal Savers Overview</a>
+                <a href="docs/health-coverage.pdf" class="doc-item"><span class="doc-icon">📄</span>Health Coverage</a>
+                <a href="docs/ca-paid-family-leave.pdf" class="doc-item"><span class="doc-icon">📄</span>CA Paid Family Leave</a>
+                <a href="docs/ca-family-rights-act.pdf" class="doc-item"><span class="doc-icon">📄</span>CA Family Rights Act</a>
+                <a href="docs/sick-leave-policy.pdf" class="doc-item"><span class="doc-icon">📄</span>Sick Leave Policy</a>
             </div>
         </div>
 
@@ -253,47 +307,32 @@
     </div>
 
 <script>
-/* --- Dropdown JS fix (added) --- */
 document.addEventListener("DOMContentLoaded", function () {
-  var dropdowns = document.querySelectorAll(".dropdown");
-  dropdowns.forEach(function (dropdown) {
+    var dropdown = document.querySelector(".dropdown");
+    if (!dropdown) return;
+
     var btn = dropdown.querySelector(".dropdown-btn");
-    var menu = dropdown.querySelector(".dropdown-content");
-    if (!btn || !menu) return;
+    if (!btn) return;
 
     btn.addEventListener("click", function (e) {
-      e.stopPropagation();
-      dropdowns.forEach(function (d) {
-        if (d !== dropdown) {
-          d.classList.remove("open");
-          var b = d.querySelector(".dropdown-btn");
-          if (b) b.setAttribute("aria-expanded", "false");
+        e.stopPropagation();
+        var isOpen = dropdown.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    document.addEventListener("click", function () {
+        dropdown.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+    });
+
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            dropdown.classList.remove("open");
+            btn.setAttribute("aria-expanded", "false");
         }
-      });
-      var isOpen = dropdown.classList.toggle("open");
-      btn.setAttribute("aria-expanded", String(isOpen));
     });
-  });
-
-  document.addEventListener("click", function () {
-    dropdowns.forEach(function (d) {
-      d.classList.remove("open");
-      var b = d.querySelector(".dropdown-btn");
-      if (b) b.setAttribute("aria-expanded", "false");
-    });
-  });
-
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") {
-      dropdowns.forEach(function (d) {
-        d.classList.remove("open");
-        var b = d.querySelector(".dropdown-btn");
-        if (b) b.setAttribute("aria-expanded", "false");
-      });
-    }
-  });
 });
-/* --- End dropdown JS fix --- */
 </script>
+
 </body>
 </html>
