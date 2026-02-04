@@ -1,11 +1,22 @@
-/* Navigation – matches subpages */
+/* Core font & reset – exact match to subpages */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: #f8f9fa; /* light gray-white like subpages */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navigation – pixel-perfect match */
 .navbar {
     background-color: #ffffff;
-    padding: 1.2rem 0;
+    padding: 1.5rem 0;
     box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 .nav-container {
@@ -25,18 +36,18 @@
 
 .nav-menu {
     display: flex;
-    gap: 1.5rem;
+    gap: 1.2rem;
     align-items: center;
 }
 
 .dropdown-btn {
-    background-color: #ffffff;
+    background: #ffffff;
     color: #2d5016;
-    padding: 0.7rem 1.4rem;
     border: 2px solid #2d5016;
+    padding: 0.75rem 1.5rem;
     border-radius: 8px;
-    cursor: pointer;
     font-weight: 500;
+    cursor: pointer;
     font-size: 1rem;
 }
 
@@ -44,34 +55,29 @@
     display: none;
     position: absolute;
     right: 0;
-    top: 100%;
-    min-width: 240px;
+    top: calc(100% + 8px);
+    min-width: 220px;
     background: white;
-    border-radius: 10px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.12);
     z-index: 1000;
 }
 
 .dropdown-content a {
     display: block;
-    padding: 12px 16px;
+    padding: 10px 14px;
     color: #333;
     text-decoration: none;
 }
 
-.dropdown-content a:hover {
-    background: #f4f4f4;
-}
-
-/* Show dropdown on hover/click – basic version */
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
 .contact-btn {
-    background-color: #2d5016;
+    background: #2d5016;
     color: white;
-    padding: 0.7rem 1.4rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 8px;
     text-decoration: none;
     font-weight: 500;
@@ -79,73 +85,73 @@
 }
 
 .contact-btn:hover {
-    background-color: #3d6b1f;
+    background: #3d6b1f;
 }
 
-/* Main content area */
+/* Content area – same as subpages */
 .content-container {
     max-width: 1100px;
-    margin: 3rem auto;
+    margin: 2.5rem auto;
     padding: 0 2rem;
 }
 
 .page-title {
-    font-size: 2.6rem;
-    color: #2d5016;
-    text-align: center;
-    margin-bottom: 0.6rem;
+    font-size: 2.5rem;
     font-weight: 700;
+    color: #2d5016;          /* exact dark green match */
+    text-align: center;
+    margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #666;
     text-align: center;
     margin-bottom: 3rem;
 }
 
-/* Cards – match subpage resource cards */
+/* Cards – identical size, border, shadow, padding to subpage cards */
 .options-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .option-card {
-    background: white;
+    background: #ffffff;
     padding: 2.5rem 2rem;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    text-align: center;
     text-decoration: none;
     color: inherit;
+    text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .option-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
 }
 
 .company-logo {
-    max-width: 140px;
+    max-width: 120px;
     height: auto;
     margin-bottom: 1.5rem;
 }
 
 .option-title {
-    font-size: 1.8rem;
-    color: #2d5016;
-    margin-bottom: 1rem;
+    font-size: 1.7rem;
     font-weight: 600;
+    color: #2d5016;
+    margin-bottom: 0.75rem;
 }
 
 .option-description {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #666;
 }
 
-/* Mobile */
+/* Mobile – stack and adjust like subpages */
 @media (max-width: 768px) {
     .nav-container {
         flex-direction: column;
@@ -157,10 +163,9 @@
     }
     .dropdown-btn, .contact-btn {
         width: 100%;
-        text-align: center;
     }
     .page-title {
-        font-size: 2.1rem;
+        font-size: 2rem;
     }
     .options-grid {
         grid-template-columns: 1fr;
