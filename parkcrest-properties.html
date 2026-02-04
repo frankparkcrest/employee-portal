@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parkcrest Properties - Employee Portal</title>
+    <title>Parkcrest Properties | Employee Resources</title>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
@@ -18,180 +15,113 @@
             line-height: 1.6;
         }
 
-        /* Navigation Bar */
         .navbar {
             background-color: white;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .nav-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            flex-shrink: 0;
         }
 
         .nav-logo-img {
-            height: 50px;
+            height: 60px;
             width: auto;
+            max-width: 260px;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-menu {
             display: flex;
-            gap: 0.75rem;
+            gap: 1rem;
             align-items: center;
-            flex-wrap: nowrap;
-        }
-
-        /* Dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
         }
 
         .dropdown-btn {
             background-color: white;
             color: #2d5016;
-            padding: 0.625rem 1rem;
-            font-size: 0.9rem;
+            padding: 0.75rem 1.5rem;
             border: 2px solid #2d5016;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 500;
-            transition: all 0.3s ease;
-            white-space: nowrap;
-        }
-
-        .dropdown-btn:hover {
-            background-color: #2d5016;
-            color: white;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 200px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            z-index: 1000;
-            border-radius: 8px;
-            margin-top: 0.5rem;
-            overflow: hidden;
-            right: 0;
-        }
-
-        .dropdown-content a {
-            color: #333;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            transition: background-color 0.2s;
-            white-space: nowrap;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f0f0f0;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         .contact-btn {
             background-color: #2d5016;
             color: white;
-            padding: 0.625rem 1rem;
+            padding: 0.75rem 1.5rem;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 500;
-            transition: background-color 0.3s;
-            font-size: 0.9rem;
-            white-space: nowrap;
         }
+        .contact-btn:hover { background-color: #3d6b1f; }
 
-        .contact-btn:hover {
-            background-color: #3d6b1f;
-        }
-
-        /* Main Content */
         .content-container {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 3rem auto;
             padding: 0 2rem;
         }
 
-        .company-title {
+        .page-title {
             font-size: 2.5rem;
             color: #2d5016;
+            text-align: center;
             margin-bottom: 0.5rem;
-            text-align: center;
         }
 
-        .company-subtitle {
-            font-size: 1.25rem;
+        .page-subtitle {
+            font-size: 1.1rem;
             color: #666;
+            text-align: center;
             margin-bottom: 3rem;
-            text-align: center;
         }
 
-        /* Resources Grid - THIS IS THE KEY PART */
-        .resources-grid {
+        .options-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
+            margin-bottom: 3rem;
         }
 
-        .resource-card {
+        .option-card {
             background: white;
-            padding: 2.5rem 2rem 2rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
             text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
         }
 
-        .resource-card:hover {
+        .option-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
         }
 
-        .resource-icon {
-            font-size: 3.5rem;
-            margin-bottom: 1.25rem;
-        }
+        .option-icon { font-size: 4rem; margin-bottom: 1.5rem; }
 
-        .resource-card h2 {
+        .option-title {
+            font-size: 1.8rem;
             color: #2d5016;
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            line-height: 1.3;
+            margin-bottom: 1rem;
+            font-weight: 600;
         }
 
-        .resource-card p {
+        .option-description {
+            font-size: 1.1rem;
             color: #666;
             line-height: 1.5;
-            font-size: 1rem;
         }
 
-        /* Back Button */
-        .back-button {
+        .back-btn {
             display: inline-flex;
             align-items: center;
             background-color: #2d5016;
@@ -200,126 +130,135 @@
             text-decoration: none;
             border-radius: 8px;
             font-weight: 500;
-            transition: background-color 0.3s;
             margin-top: 2rem;
         }
+        .back-btn:hover { background-color: #3d6b1f; }
 
-        .back-button:hover {
-            background-color: #3d6b1f;
+        .dropdown { position: relative; display: inline-block; }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            min-width: 240px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            overflow: hidden;
+            z-index: 9999;
         }
-
-        .back-arrow {
-            margin-right: 0.5rem;
+        .dropdown-content a {
+            display: block;
+            padding: 12px 14px;
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            white-space: nowrap;
         }
+        .dropdown-content a:hover { background: #f4f4f4; }
+        .dropdown.open .dropdown-content { display: block; }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .nav-container {
-                padding: 0 1rem;
-            }
-
-            .nav-logo-img {
-                height: 45px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
             }
 
             .nav-menu {
+                flex-direction: column;
+                width: 100%;
                 gap: 0.5rem;
             }
 
-            .dropdown-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
-            }
-
+            .dropdown,
+            .dropdown-btn,
             .contact-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
+                width: 100%;
+                text-align: center;
             }
 
-            .company-title {
-                font-size: 2rem;
-            }
-
-            .resources-grid {
-                grid-template-columns: 1fr;
-                max-width: 100%;
-            }
-
-            .content-container {
-                padding: 0 1rem;
-                margin: 2rem auto;
-            }
-        }
-
-        @media (max-width: 480px) {
             .nav-logo-img {
-                height: 40px;
+                max-width: 210px;
+                margin: 0 auto;
             }
 
-            .dropdown-btn {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.8rem;
-            }
-
-            .contact-btn {
-                padding: 0.45rem 0.65rem;
-                font-size: 0.8rem;
-            }
-
-            .company-title {
-                font-size: 1.75rem;
-            }
+            .page-title { font-size: 2rem; }
         }
     </style>
 </head>
+
 <body>
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">
+            <a href="index.html">
                 <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="nav-logo-img">
             </a>
-            
+
             <div class="nav-menu">
                 <div class="dropdown">
-                    <button class="dropdown-btn">Select Company ▼</button>
-                    <div class="dropdown-content">
-                        <a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-                        <a href="ampm.html">AMPM</a>
-                        <a href="archibalds.html">Archibald's</a>
-                        <a href="parkcrest-properties.html">Parkcrest Properties</a>
+                    <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
+                    <div class="dropdown-content" role="menu" aria-label="Company menu">
+                        <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
+                        <a href="ampm.html" role="menuitem">AMPM</a>
+                        <a href="archibalds.html" role="menuitem">Archibald's</a>
+                        <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
                     </div>
                 </div>
-                
+
                 <a href="contact-form-parkcrest.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
     <div class="content-container">
-        <h1 class="company-title">Parkcrest Properties</h1>
-        <p class="company-subtitle">Employee Resources</p>
-        
-        <div class="resources-grid">
-            <a href="benefits-parkcrest.html" class="resource-card">
-                <div class="resource-icon">📋</div>
-                <h2>Employee Benefit Docs</h2>
-                <p>Access your benefits information and documentation</p>
-            </a>
-            
-            <a href="tax-labor-parkcrest.html" class="resource-card">
-                <div class="resource-icon">⚖️</div>
-                <h2>Tax and Labor Law Info</h2>
-                <p>View tax documents and labor law information</p>
-            </a>
+        <h1 class="page-title">Parkcrest Properties</h1>
+        <p class="page-subtitle">Employee Resources</p>
+
+        <div class="options-grid">
+            <div class="option-card" onclick="window.location.href='benefits-parkcrest.html'">
+                <div class="option-icon">📋</div>
+                <h2 class="option-title">Employee Benefit Docs</h2>
+                <p class="option-description">Access your benefits information and documentation</p>
+            </div>
+
+            <div class="option-card" onclick="window.location.href='tax-labor-parkcrest.html'">
+                <div class="option-icon">⚖️</div>
+                <h2 class="option-title">Tax & Labor Law Docs</h2>
+                <p class="option-description">View tax forms and labor law documentation</p>
+            </div>
         </div>
 
-        <!-- Back to Homepage Button -->
-        <a href="index.html" class="back-button">
-            <span class="back-arrow">←</span>
-            Back to Homepage
-        </a>
+        <a href="index.html" class="back-btn">← Back to Homepage</a>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var dropdown = document.querySelector(".dropdown");
+            if (!dropdown) return;
+
+            var btn = dropdown.querySelector(".dropdown-btn");
+            if (!btn) return;
+
+            btn.addEventListener("click", function (e) {
+                e.stopPropagation();
+                var isOpen = dropdown.classList.toggle("open");
+                btn.setAttribute("aria-expanded", String(isOpen));
+            });
+
+            document.addEventListener("click", function () {
+                dropdown.classList.remove("open");
+                btn.setAttribute("aria-expanded", "false");
+            });
+
+            document.addEventListener("keydown", function (e) {
+                if (e.key === "Escape") {
+                    dropdown.classList.remove("open");
+                    btn.setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
