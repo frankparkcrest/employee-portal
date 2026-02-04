@@ -35,7 +35,7 @@ object-fit:contain;display:block
 display:flex;gap:1rem;align-items:center
 }
 
-.dropdown{position:relative}
+.dropdown{position:relative;display:inline-block}
 
 .dropdown-btn{
 background:#fff;color:#2d5016;
@@ -145,12 +145,12 @@ max-width:210px;margin:0 auto
 
 <div class="nav-menu">
 <div class="dropdown">
-<button class="dropdown-btn" type="button">Select Company ▼</button>
-<div class="dropdown-content">
-<a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-<a href="ampm.html">AMPM</a>
-<a href="archibalds.html">Archibald's</a>
-<a href="parkcrest-properties.html">Parkcrest Properties</a>
+<button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
+<div class="dropdown-content" role="menu" aria-label="Company menu">
+<a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
+<a href="ampm.html" role="menuitem">AMPM</a>
+<a href="archibalds.html" role="menuitem">Archibald's</a>
+<a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
 </div>
 </div>
 
@@ -181,14 +181,31 @@ max-width:210px;margin:0 auto
 </div>
 
 <script>
-document.addEventListener("click",function(e){
-const d=document.querySelector(".dropdown");
-if(!d.contains(e.target))d.classList.remove("open")
+document.addEventListener("DOMContentLoaded", function () {
+  var dropdown = document.querySelector(".dropdown");
+  if (!dropdown) return;
+
+  var btn = dropdown.querySelector(".dropdown-btn");
+  if (!btn) return;
+
+  btn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    var isOpen = dropdown.classList.toggle("open");
+    btn.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", function () {
+    dropdown.classList.remove("open");
+    btn.setAttribute("aria-expanded", "false");
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      dropdown.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+  });
 });
-document.querySelector(".dropdown-btn").onclick=function(e){
-e.stopPropagation();
-this.parentElement.classList.toggle("open")
-};
 </script>
 
 </body>
