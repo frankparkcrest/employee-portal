@@ -32,11 +32,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
 
+        /* ✅ Logo aspect-ratio fix (prevents iOS stretching) */
         .nav-logo-img {
             height: 60px;
             width: auto;
+            max-width: 260px;
+            object-fit: contain;
+            display: block;
         }
 
         .nav-menu {
@@ -164,16 +169,44 @@
         }
 
         .back-btn:hover { background-color: #3d6b1f; }
-    
 
-/* --- Dropdown CSS fix (added) --- */
-.dropdown{position:relative;display:inline-block}
-.dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);overflow:hidden;z-index:9999}
-.dropdown-content a{display:block;padding:12px 14px;text-decoration:none;color:#333;font-weight:500;white-space:nowrap}
-.dropdown-content a:hover{background:#f4f4f4}
-.dropdown.open .dropdown-content{display:block}
-/* --- End dropdown CSS fix --- */
-</style>
+        /* --- Dropdown CSS fix (already present) --- */
+        .dropdown{position:relative;display:inline-block}
+        .dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);overflow:hidden;z-index:9999}
+        .dropdown-content a{display:block;padding:12px 14px;text-decoration:none;color:#333;font-weight:500;white-space:nowrap}
+        .dropdown-content a:hover{background:#f4f4f4}
+        .dropdown.open .dropdown-content{display:block}
+        /* --- End dropdown CSS fix --- */
+
+        /* ✅ Mobile navbar fix (prevents Contact Form cutoff) */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0.75rem;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.5rem;
+            }
+
+            .dropdown,
+            .dropdown-btn,
+            .contact-btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav-logo-img {
+                max-width: 210px;
+                margin: 0 auto;
+            }
+
+            .page-title { font-size: 2rem; }
+        }
+    </style>
 </head>
 <body>
 
@@ -182,14 +215,14 @@
             <a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Logo" class="nav-logo-img"></a>
             <div class="nav-menu">
                 <div class="dropdown">
-          <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
-          <div class="dropdown-content" role="menu" aria-label="Company menu">
-            <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
-            <a href="ampm.html" role="menuitem">AMPM</a>
-            <a href="archibalds.html" role="menuitem">Archibald's</a>
-            <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
-          </div>
-        </div>
+                    <button class="dropdown-btn" type="button" aria-haspopup="true" aria-expanded="false">Select Company ▼</button>
+                    <div class="dropdown-content" role="menu" aria-label="Company menu">
+                        <a href="andys-xpress-wash.html" role="menuitem">Andy's Xpress Wash</a>
+                        <a href="ampm.html" role="menuitem">AMPM</a>
+                        <a href="archibalds.html" role="menuitem">Archibald's</a>
+                        <a href="parkcrest-properties.html" role="menuitem">Parkcrest Properties</a>
+                    </div>
+                </div>
                 <a href="contact-form-andys.html" class="contact-btn">Contact Form</a>
             </div>
         </div>
@@ -223,7 +256,7 @@
         <div class="docs-section">
             <h2>Tax and Labor Law Documents</h2>
             <p>Click on any document below to view or download:</p>
-            
+
             <div class="doc-list">
                 <a href="docs/w4-form-english-2026.pdf" class="doc-item">
                     <span class="doc-icon">📄</span> W-4 Form (English) 2026
@@ -259,7 +292,7 @@
     </div>
 
 <script>
-/* --- Dropdown JS fix (added) --- */
+/* --- Dropdown JS fix (already present) --- */
 document.addEventListener("DOMContentLoaded", function () {
   var dropdowns = document.querySelectorAll(".dropdown");
   dropdowns.forEach(function (dropdown) {
