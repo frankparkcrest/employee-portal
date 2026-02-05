@@ -13,178 +13,167 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #f0f0f0;
             color: #333;
             line-height: 1.6;
         }
 
-        /* Header/Logo Section */
-        .header {
+        /* Logo Section */
+        .logo-section {
             background-color: white;
-            padding: 3rem 2rem;
+            padding: 2rem 0;
             text-align: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .logo {
-            max-width: 500px;
-            height: auto;
-            margin: 0 auto;
+        .logo-img {
+            height: 80px;
+            width: auto;
         }
 
         /* Main Content */
-        .main-content {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 1rem;
-            width: 100%;
+        .content-container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
         }
 
         .page-title {
             font-size: 2.5rem;
             color: #2d5016;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
         }
 
         .page-subtitle {
-            font-size: 1.1rem;
+            font-size: 1.25rem;
             color: #666;
             margin-bottom: 3rem;
+            text-align: center;
         }
 
-        /* Company Cards Grid */
+        /* Company Grid */
         .company-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
-            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .company-card {
             background: white;
             padding: 2.5rem 2rem;
             border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-            text-align: center;
             text-decoration: none;
-            color: #333;
-            transition: all 0.3s;
-            min-height: 300px;
+            color: inherit;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            text-align: center;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
+            justify-content: center;
+            min-height: 320px;
         }
 
         .company-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
         }
 
         .company-logo {
-            max-width: 180px;
-            height: auto;
+            height: 100px;
+            width: auto;
+            max-width: 200px;
+            object-fit: contain;
             margin-bottom: 1.5rem;
         }
 
-        .company-name {
-            font-size: 1.5rem;
-            font-weight: 600;
+        .company-card h2 {
             color: #2d5016;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
         }
 
-        .company-description {
-            font-size: 1rem;
+        .company-card p {
             color: #666;
+            line-height: 1.5;
+            font-size: 1rem;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .header {
-                padding: 2rem 1rem;
+            .logo-img {
+                height: 60px;
             }
 
-            .logo {
-                max-width: 90%;
+            .page-title {
+                font-size: 2rem;
             }
 
-            .main-content {
-                padding: 2rem 1rem;
+            .page-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .content-container {
+                padding: 0 1rem;
+                margin: 2rem auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 50px;
             }
 
             .page-title {
                 font-size: 1.75rem;
             }
-
-            .page-subtitle {
-                font-size: 1rem;
-            }
-
-            .company-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .company-card {
-                padding: 2rem 1.5rem;
-                min-height: 250px;
-            }
-
-            .company-logo {
-                max-width: 150px;
-            }
-
-            .company-name {
-                font-size: 1.3rem;
-            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header with Logo -->
-    <div class="header">
-        <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties" class="logo">
+    <!-- Logo Section -->
+    <div class="logo-section">
+        <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="logo-img">
     </div>
 
     <!-- Main Content -->
-    <div class="main-content">
+    <div class="content-container">
         <h1 class="page-title">Employee Portal</h1>
         <p class="page-subtitle">Select the company you are employed with to continue.</p>
-
-        <!-- Company Selection Grid -->
+        
         <div class="company-grid">
-            <!-- Andy's Xpress Wash -->
             <a href="andys-xpress-wash.html" class="company-card">
                 <img src="assets/andys-xpress-wash-logo.png" alt="Andy's Xpress Wash" class="company-logo">
-                <h2 class="company-name">Andy's Xpress Wash</h2>
-                <p class="company-description">Access your employee resources</p>
+                <h2>Andy's Xpress Wash</h2>
+                <p>Access your employee resources</p>
             </a>
-
-            <!-- AMPM -->
+            
             <a href="ampm.html" class="company-card">
                 <img src="assets/ampm-logo.png" alt="AMPM" class="company-logo">
-                <h2 class="company-name">AMPM</h2>
-                <p class="company-description">Access your employee resources</p>
+                <h2>AMPM</h2>
+                <p>Access your employee resources</p>
             </a>
-
-            <!-- Archibald's -->
+            
             <a href="archibalds.html" class="company-card">
                 <img src="assets/archibalds-logo.png" alt="Archibald's" class="company-logo">
-                <h2 class="company-name">Archibald's</h2>
-                <p class="company-description">Access your employee resources</p>
+                <h2>Archibald's</h2>
+                <p>Access your employee resources</p>
             </a>
-
-            <!-- Parkcrest Properties -->
+            
             <a href="parkcrest-properties.html" class="company-card">
                 <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties" class="company-logo">
-                <h2 class="company-name">Parkcrest Properties</h2>
-                <p class="company-description">Access your employee resources</p>
+                <h2>Parkcrest Properties</h2>
+                <p>Access your employee resources</p>
             </a>
         </div>
     </div>
-
 </body>
 </html>
