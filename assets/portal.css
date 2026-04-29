@@ -5,16 +5,16 @@
 }
 
 :root {
-  --bg: #0f120f;
-  --panel: #151914;
-  --panel-alt: #111510;
-  --line: rgba(139, 162, 118, 0.16);
-  --line-strong: rgba(139, 162, 118, 0.28);
-  --accent: #8aa66f;
-  --accent-soft: rgba(138, 166, 111, 0.10);
-  --text: #e2e6da;
-  --muted: #98a18f;
-  --dim: #65705d;
+  --bg: #0b0d10;
+  --panel: #10151a;
+  --panel-alt: #0d1116;
+  --line: rgba(94, 124, 150, 0.16);
+  --line-strong: rgba(94, 124, 150, 0.30);
+  --accent: #7e9bb4;
+  --accent-soft: rgba(126, 155, 180, 0.10);
+  --text: #d9e3ec;
+  --muted: #94a3af;
+  --dim: #647887;
   --shadow: rgba(0, 0, 0, 0.34);
 }
 
@@ -24,7 +24,7 @@ body {
   color: var(--text);
   background-color: var(--bg);
   background-image:
-    radial-gradient(circle at 20% 0%, rgba(138, 166, 111, 0.08), transparent 34rem),
+    radial-gradient(circle at 20% 0%, rgba(126, 155, 180, 0.07), transparent 34rem),
     linear-gradient(var(--line) 1px, transparent 1px),
     linear-gradient(90deg, var(--line) 1px, transparent 1px);
   background-size: auto, 42px 42px, 42px 42px;
@@ -32,7 +32,7 @@ body {
 }
 
 .topbar {
-  background: rgba(15, 18, 15, 0.94);
+  background: rgba(10, 13, 17, 0.96);
   border-bottom: 1px solid var(--line-strong);
 }
 
@@ -120,7 +120,7 @@ h1 {
 
 .portal-note {
   color: var(--muted);
-  background: rgba(21, 25, 20, 0.92);
+  background: rgba(14, 18, 24, 0.93);
   border: 1px solid var(--line-strong);
   border-left: 4px solid var(--accent);
   border-radius: 6px;
@@ -129,7 +129,7 @@ h1 {
 }
 
 .panel {
-  background: rgba(14, 18, 13, 0.96);
+  background: rgba(12, 16, 21, 0.97);
   border: 1px solid var(--line-strong);
   border-radius: 8px;
   box-shadow: 0 18px 50px var(--shadow);
@@ -155,7 +155,7 @@ h1 {
 .resource-card,
 .info-card,
 .form-card {
-  background: rgba(14, 18, 13, 0.96);
+  background: rgba(12, 16, 21, 0.97);
   border: 1px solid var(--line-strong);
   border-radius: 8px;
   padding: 1rem;
@@ -163,7 +163,7 @@ h1 {
 
 .resource-card:hover,
 .info-card:hover {
-  background: rgba(138, 166, 111, 0.045);
+  background: rgba(126, 155, 180, 0.05);
 }
 
 .resource-card h2,
@@ -191,7 +191,7 @@ h1 {
   width: 100%;
   padding: 0.6rem 0.75rem;
   color: var(--text);
-  background: rgba(138, 166, 111, 0.035);
+  background: rgba(126, 155, 180, 0.04);
   border: 1px solid var(--line);
   border-radius: 5px;
   text-decoration: none;
@@ -214,7 +214,7 @@ h1 {
 .action-link:hover,
 .doc-item:hover,
 .submit-btn:hover {
-  color: #f1f5e9;
+  color: #edf4fa;
   background: var(--accent-soft);
   border-color: var(--accent);
 }
@@ -317,7 +317,7 @@ button:focus-visible,
 input:focus-visible,
 select:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid rgba(138, 166, 111, 0.36);
+  outline: 3px solid rgba(126, 155, 180, 0.36);
   outline-offset: 3px;
 }
 
