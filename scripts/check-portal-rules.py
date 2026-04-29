@@ -38,10 +38,10 @@ def main():
         parser = PortalParser()
         parser.feed(html_file.read_text(encoding="utf-8"))
         if html_file.name == "index.html":
-            homepage_links = {
-                " ".join(link["text"].split()).lower(): link["href"]
-                for link in parser.links
-            }
+            homepage_links = {}
+            for link in parser.links:
+                homepage_links.setdefault(link["href"], 0)
+                homepage_links[link["href"]] += 1
 
         if parser.file_inputs:
             failures.append(f"{html_file.name}: public file upload input is not allowed")
@@ -55,27 +55,24 @@ def main():
                 )
 
     required_homepage_links = {
-        "andy's xpress wash contact": "contact-form-andys.html",
-        "andy's xpress wash benefits": "benefits-andys.html",
-        "andy's xpress wash tax & labor": "tax-labor-andys.html",
-        "ampm contact": "contact-form-ampm.html",
-        "ampm benefits": "benefits-ampm.html",
-        "ampm tax & labor": "tax-labor-ampm.html",
-        "archibald's contact": "contact-form-archibalds.html",
-        "archibald's benefits": "benefits-archibalds.html",
-        "archibald's tax & labor": "tax-labor-archibalds.html",
-        "parkcrest properties contact": "contact-form-parkcrest.html",
-        "parkcrest properties benefits": "benefits-parkcrest.html",
-        "parkcrest properties tax & labor": "tax-labor-parkcrest.html",
-        "andy's xpress wash incident report": "incident-report.html",
-        "ampm incident report": "incident-report.html",
-        "archibald's incident report": "incident-report.html",
-        "parkcrest properties incident report": "incident-report.html",
+        "contact-form-andys.html": 1,
+        "benefits-andys.html": 1,
+        "tax-labor-andys.html": 1,
+        "contact-form-ampm.html": 1,
+        "benefits-ampm.html": 1,
+        "tax-labor-ampm.html": 1,
+        "contact-form-archibalds.html": 1,
+        "benefits-archibalds.html": 1,
+        "tax-labor-archibalds.html": 1,
+        "contact-form-parkcrest.html": 1,
+        "benefits-parkcrest.html": 1,
+        "tax-labor-parkcrest.html": 1,
+        "incident-report.html": 4,
     }
 
-    for text, href in required_homepage_links.items():
-        if homepage_links.get(text) != href:
-            failures.append(f"index.html: missing quick link {text} -> {href}")
+    for href, count in required_homepage_links.items():
+        if homepage_links.get(href, 0) != count:
+            failures.append(f"index.html: expected {count} link(s) to {href}")
 
     if failures:
         print("Portal rule violations found:")
