@@ -13,181 +13,272 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f0f0f0;
-            color: #333;
-            line-height: 1.6;
+            background: #f5f6f4;
+            color: #24301f;
+            line-height: 1.5;
         }
 
-        /* Logo Section */
-        .logo-section {
-            background-color: white;
-            padding: 2rem 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        .topbar {
+            background: #ffffff;
+            border-bottom: 1px solid #e2e6df;
+        }
+
+        .topbar-inner {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 1.1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
         }
 
         .logo-img {
-            height: 80px;
+            height: 56px;
             width: auto;
+            display: block;
         }
 
-        /* Main Content */
+        .portal-label {
+            color: #52604c;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-align: right;
+        }
+
         .content-container {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(300px, 460px);
+            gap: 1.5rem;
+            align-items: end;
+            margin-bottom: 1.5rem;
         }
 
         .page-title {
-            font-size: 2.5rem;
             color: #2d5016;
-            margin-bottom: 1rem;
-            text-align: center;
+            font-size: 2.4rem;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
         }
 
         .page-subtitle {
-            font-size: 1.25rem;
-            color: #666;
-            margin-bottom: 1rem;
-            text-align: center;
+            color: #5d6858;
+            font-size: 1.08rem;
+            max-width: 620px;
         }
 
         .portal-note {
-            max-width: 760px;
-            margin: 0 auto 3rem;
-            padding: 1rem 1.25rem;
-            color: #42513a;
+            padding: 0.9rem 1rem;
+            color: #405239;
             background: #ffffff;
+            border: 1px solid #dfe7da;
             border-left: 5px solid #2d5016;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            font-size: 1rem;
-            text-align: left;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            box-shadow: 0 2px 8px rgba(31, 45, 24, 0.06);
         }
 
-        /* Company Grid */
         .company-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1rem;
         }
 
         .company-card {
-            background: white;
-            padding: 2.5rem 2rem;
-            border-radius: 12px;
-            text-decoration: none;
-            color: inherit;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
+            background: #ffffff;
+            border: 1px solid #e2e6df;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(31, 45, 24, 0.06);
+            padding: 1.25rem;
+            display: grid;
+            grid-template-columns: 120px minmax(0, 1fr);
+            gap: 1.25rem;
             align-items: center;
-            justify-content: center;
-            min-height: 320px;
         }
 
-        .company-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+        .company-logo-wrap {
+            min-height: 96px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8faf7;
+            border: 1px solid #edf0ea;
+            border-radius: 8px;
+            padding: 0.75rem;
         }
 
         .company-logo {
-            height: 100px;
+            max-width: 100%;
+            max-height: 72px;
             width: auto;
-            max-width: 200px;
+            height: auto;
             object-fit: contain;
-            margin-bottom: 1.5rem;
         }
 
         .company-card h2 {
             color: #2d5016;
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            line-height: 1.25;
             margin-bottom: 0.75rem;
-            line-height: 1.3;
         }
 
-        .company-card p {
-            color: #666;
-            line-height: 1.5;
-            font-size: 1rem;
+        .action-list {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 0.5rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .logo-img {
-                height: 60px;
+        .action-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 42px;
+            padding: 0.55rem 0.65rem;
+            color: #2d5016;
+            background: #f7faf5;
+            border: 1px solid #d8e2d2;
+            border-radius: 7px;
+            text-decoration: none;
+            font-size: 0.92rem;
+            font-weight: 650;
+            text-align: center;
+        }
+
+        .action-link:hover {
+            background: #edf5e8;
+            border-color: #bdd1b2;
+        }
+
+        a:focus-visible {
+            outline: 3px solid rgba(45, 80, 22, 0.35);
+            outline-offset: 3px;
+        }
+
+        @media (max-width: 900px) {
+            .hero,
+            .company-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                align-items: start;
+            }
+        }
+
+        @media (max-width: 620px) {
+            .topbar-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .portal-label {
+                text-align: left;
+            }
+
+            .content-container {
+                padding: 1.5rem 1rem 2rem;
             }
 
             .page-title {
                 font-size: 2rem;
             }
 
-            .page-subtitle {
-                font-size: 1.1rem;
+            .company-card {
+                grid-template-columns: 88px minmax(0, 1fr);
+                gap: 0.9rem;
+                padding: 1rem;
             }
 
-            .company-grid {
+            .company-logo-wrap {
+                min-height: 82px;
+            }
+
+            .action-list {
                 grid-template-columns: 1fr;
-            }
-
-            .content-container {
-                padding: 0 1rem;
-                margin: 2rem auto;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .logo-img {
-                height: 50px;
-            }
-
-            .page-title {
-                font-size: 1.75rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Logo Section -->
-    <div class="logo-section">
-        <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="logo-img">
-    </div>
-
-    <!-- Main Content -->
-    <div class="content-container">
-        <h1 class="page-title">Employee Portal</h1>
-        <p class="page-subtitle">Select the company you are employed with to continue.</p>
-        <p class="portal-note">This public portal provides read-only employee resources. For document submissions or personal employment questions, contact your manager or HR representative directly.</p>
-        
-        <div class="company-grid">
-            <a href="andys-xpress-wash.html" class="company-card">
-                <img src="assets/andys-xpress-wash-logo.png" alt="Andy's Xpress Wash" class="company-logo">
-                <h2>Andy's Xpress Wash</h2>
-                <p>Access your employee resources</p>
-            </a>
-            
-            <a href="ampm.html" class="company-card">
-                <img src="assets/ampm-logo.png" alt="AMPM" class="company-logo">
-                <h2>AMPM</h2>
-                <p>Access your employee resources</p>
-            </a>
-            
-            <a href="archibalds.html" class="company-card">
-                <img src="assets/archibalds-logo.png" alt="Archibald's" class="company-logo">
-                <h2>Archibald's</h2>
-                <p>Access your employee resources</p>
-            </a>
-            
-            <a href="parkcrest-properties.html" class="company-card">
-                <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties" class="company-logo">
-                <h2>Parkcrest Properties</h2>
-                <p>Access your employee resources</p>
-            </a>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties Logo" class="logo-img">
+            <div class="portal-label">Employee Resource Portal</div>
         </div>
-    </div>
+    </header>
+
+    <main class="content-container">
+        <section class="hero" aria-labelledby="portal-title">
+            <div>
+                <h1 class="page-title" id="portal-title">Employee Portal</h1>
+                <p class="page-subtitle">Choose your company, then go directly to the resource you need.</p>
+            </div>
+            <p class="portal-note">This public portal provides read-only employee resources. For document submissions or personal employment questions, contact your manager or HR representative directly.</p>
+        </section>
+
+        <section class="company-grid" aria-label="Company resource links">
+            <article class="company-card">
+                <div class="company-logo-wrap">
+                    <img src="assets/andys-xpress-wash-logo.png" alt="Andy's Xpress Wash" class="company-logo">
+                </div>
+                <div>
+                    <h2>Andy's Xpress Wash</h2>
+                    <div class="action-list" aria-label="Andy's Xpress Wash resources">
+                        <a href="contact-form-andys.html" class="action-link">Andy's Xpress Wash Contact</a>
+                        <a href="benefits-andys.html" class="action-link">Andy's Xpress Wash Benefits</a>
+                        <a href="tax-labor-andys.html" class="action-link">Andy's Xpress Wash Tax &amp; Labor</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="company-card">
+                <div class="company-logo-wrap">
+                    <img src="assets/ampm-logo.png" alt="AMPM" class="company-logo">
+                </div>
+                <div>
+                    <h2>AMPM</h2>
+                    <div class="action-list" aria-label="AMPM resources">
+                        <a href="contact-form-ampm.html" class="action-link">AMPM Contact</a>
+                        <a href="benefits-ampm.html" class="action-link">AMPM Benefits</a>
+                        <a href="tax-labor-ampm.html" class="action-link">AMPM Tax &amp; Labor</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="company-card">
+                <div class="company-logo-wrap">
+                    <img src="assets/archibalds-logo.png" alt="Archibald's" class="company-logo">
+                </div>
+                <div>
+                    <h2>Archibald's</h2>
+                    <div class="action-list" aria-label="Archibald's resources">
+                        <a href="contact-form-archibalds.html" class="action-link">Archibald's Contact</a>
+                        <a href="benefits-archibalds.html" class="action-link">Archibald's Benefits</a>
+                        <a href="tax-labor-archibalds.html" class="action-link">Archibald's Tax &amp; Labor</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="company-card">
+                <div class="company-logo-wrap">
+                    <img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties" class="company-logo">
+                </div>
+                <div>
+                    <h2>Parkcrest Properties</h2>
+                    <div class="action-list" aria-label="Parkcrest Properties resources">
+                        <a href="contact-form-parkcrest.html" class="action-link">Parkcrest Properties Contact</a>
+                        <a href="benefits-parkcrest.html" class="action-link">Parkcrest Properties Benefits</a>
+                        <a href="tax-labor-parkcrest.html" class="action-link">Parkcrest Properties Tax &amp; Labor</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
 </body>
 </html>
