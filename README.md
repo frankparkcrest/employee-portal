@@ -1,141 +1,84 @@
-# Employee Portal Website
+# Parkcrest Employee Portal
 
-Multi-company employee portal with company selection and resource access.
+Public employee resource portal for Parkcrest Properties and related companies.
 
-## 🏢 Companies
+## Companies
+
 - Andy's Xpress Wash
 - AMPM
 - Archibald's
 - Parkcrest Properties
 
-## 📁 Project Structure
+## Purpose
 
-```
+The portal helps employees quickly find company-specific resources:
+
+- Contact / HR help
+- Benefits documents
+- Tax and labor law documents
+
+The site is intentionally public and read-only. Employees should not submit documents, medical records, Social Security numbers, or sensitive files through this public portal.
+
+## Project Structure
+
+```text
 /
-├── index.html                      # Landing page (company selection)
-├── styles.css                      # Main stylesheet
-├── andys-xpress-wash.html         # Andy's company page
-├── ampm.html                       # AMPM company page
-├── archibalds.html                # Archibald's company page
-├── parkcrest-properties.html      # Parkcrest company page
-├── contact-form-parkcrest.html    # Sample contact form
-│
-└── assets/                         # Create this folder
-    └── logo.png                    # Add your logo here
+├── index.html
+├── styles.css
+├── andys-xpress-wash.html
+├── ampm.html
+├── archibalds.html
+├── parkcrest-properties.html
+├── contact-form-*.html
+├── benefits-*.html
+├── tax-labor-*.html
+├── assets/
+├── docs/
+└── scripts/
 ```
 
-## 🚀 Setup Instructions
+## Local Preview
 
-### 1. Add Your Logo
-- Create an `assets` folder in the root directory
-- Add your company logo as `logo.png` (recommended size: 200px width)
-- If using a different filename, update all HTML files
-
-### 2. Create Additional Pages
-
-You'll need to create these pages for each company:
-
-**Contact Forms:**
-- `contact-form-andys.html`
-- `contact-form-ampm.html`
-- `contact-form-archibalds.html`
-- `contact-form-parkcrest.html` (sample provided)
-
-**Benefits Pages:**
-- `benefits-andys.html`
-- `benefits-ampm.html`
-- `benefits-archibalds.html`
-- `benefits-parkcrest.html`
-
-**Tax & Labor Pages:**
-- `tax-labor-andys.html`
-- `tax-labor-ampm.html`
-- `tax-labor-archibalds.html`
-- `tax-labor-parkcrest.html`
-
-### 3. Organize Company Resources
-
-Create folders for company-specific documents:
-
-```
-/assets/
-  /andys/
-    /benefits/
-    /tax-labor/
-  /ampm/
-    /benefits/
-    /tax-labor/
-  /archibalds/
-    /benefits/
-    /tax-labor/
-  /parkcrest/
-    /benefits/
-    /tax-labor/
-```
-
-### 4. GitHub Deployment
+Run a simple local server from the repository root:
 
 ```bash
-# Clone your repository
-git clone [your-repo-url]
-cd [your-repo-name]
-
-# Add all files
-git add .
-
-# Commit changes
-git commit -m "Updated employee portal with new structure"
-
-# Push to GitHub
-git push origin main
+python3 -m http.server 8080
 ```
 
-### 5. Enable GitHub Pages (Optional)
+Open:
 
-1. Go to your repository on GitHub
-2. Click **Settings**
-3. Scroll to **Pages** section
-4. Under "Source", select **main branch**
-5. Click **Save**
-6. Your site will be live at: `https://[username].github.io/[repo-name]`
+```text
+http://localhost:8080/index.html
+```
 
-## 🎨 Customization
+## Verification
 
-### Colors
-Edit `styles.css` to change the color scheme:
-- Primary color: `#667eea` (purple-blue)
-- Secondary color: `#764ba2` (purple)
-- Update these throughout the CSS file
+Check that internal links point to existing files:
 
-### Navigation
-The navigation bar includes:
-- Logo (links to homepage)
-- Select Company dropdown
-- Contact Form button
+```bash
+python3 scripts/check-links.py
+```
 
-### Responsive Design
-The site is fully responsive and works on:
-- Desktop computers
-- Tablets
-- Mobile phones
+Check portal safety/content rules:
 
-## 📝 Notes
+```bash
+python3 scripts/check-portal-rules.py
+```
 
-- **Contact Form**: Sample form provided. You'll need to add backend processing (PHP, form service, etc.)
-- **Document Links**: Update resource pages with actual PDF/document links
-- **Logo**: Replace placeholder with your actual logo
-- **Content**: Customize text and descriptions for each company
+Both commands should pass before deploying changes.
 
-## 🔧 Future Enhancements
+## Public Upload Policy
 
-Consider adding:
-- Search functionality
-- Employee login system
-- Document upload capabilities
-- Announcement section
-- FAQ section
-- Footer with contact information
+Do not add public file upload fields to this site.
 
-## 📞 Support
+If employee document submission is needed later, use a protected workflow with authentication, file type limits, file size limits, malware scanning, and private storage. Do not store employee-submitted files in this repository or any public web folder.
 
-For questions or issues, contact your web development team.
+## Deployment
+
+The repository includes a `CNAME` file for:
+
+```text
+parkcrestinc.com
+```
+
+This indicates the current site is set up for a custom domain, likely through GitHub Pages with DNS managed separately. Production deployment should happen only after preview approval.
