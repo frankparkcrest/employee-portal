@@ -67,6 +67,10 @@ def main():
         "parkcrest properties contact": "contact-form-parkcrest.html",
         "parkcrest properties benefits": "benefits-parkcrest.html",
         "parkcrest properties tax & labor": "tax-labor-parkcrest.html",
+        "andy's xpress wash incident report": "incident-report.html",
+        "ampm incident report": "incident-report.html",
+        "archibald's incident report": "incident-report.html",
+        "parkcrest properties incident report": "incident-report.html",
     }
 
     for text, href in required_homepage_links.items():
