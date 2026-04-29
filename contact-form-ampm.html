@@ -3,122 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AMPM - Contact Form</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,sans-serif;background:#f0f0f0;color:#333}
-.navbar{background:#fff;padding:1.5rem 0;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.nav-container{max-width:1200px;margin:0 auto;padding:0 2rem;display:flex;justify-content:space-between;align-items:center}
-.nav-logo-img{height:60px}
-.nav-menu{display:flex;gap:1rem;align-items:center}
-.dropdown-btn{background:#fff;color:#2d5016;padding:.75rem 1.5rem;border:2px solid #2d5016;border-radius:8px;cursor:pointer;font-weight:500}
-.contact-btn{background:#2d5016;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px;font-weight:500}
-.dropdown{position:relative}
-.dropdown-content{display:none;position:absolute;top:calc(100% + 10px);right:0;min-width:240px;background:#fff;border:1px solid #ddd;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.12);z-index:9999}
-.dropdown-content a{display:block;padding:12px 14px;color:#333;text-decoration:none;font-weight:500}
-.dropdown-content a:hover{background:#f4f4f4}
-.dropdown.open .dropdown-content{display:block}
-.content-container{max-width:900px;margin:3rem auto;padding:0 2rem}
-.form-title{text-align:center;color:#2d5016;font-size:2.2rem}
-.form-subtitle{text-align:center;color:#666;margin-bottom:2rem}
-.form-card{background:#fff;padding:2rem;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.08)}
-label{display:block;font-weight:600;margin:.85rem 0 .35rem;color:#2d5016}
-input[type=text],input[type=email],input[type=tel],textarea,select{width:100%;padding:.85rem 1rem;border:1px solid #ddd;border-radius:10px;font-size:1rem}
-textarea{min-height:160px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.radio-group{display:grid;gap:.5rem}
-.radio-item{display:flex;gap:.5rem;align-items:center;justify-content:flex-start}
-input[type=radio]{width:auto;padding:0;border-radius:50%;accent-color:#2d5016}
-.submit-btn{width:100%;margin-top:1.25rem;background:#2d5016;color:#fff;padding:.9rem;border:none;border-radius:10px;font-weight:700;cursor:pointer}
-.back-btn{display:inline-flex;margin-top:1.5rem;background:#2d5016;color:#fff;padding:.75rem 1.5rem;text-decoration:none;border-radius:8px}
-@media(max-width:768px){.form-row{grid-template-columns:1fr}}
-</style>
+<title>Contact Form - AMPM</title>
+<link rel="icon" href="assets/parkcrest-properties-logo.png">
+<link rel="stylesheet" href="assets/portal.css">
 </head>
 <body>
-
-<nav class="navbar">
-<div class="nav-container">
-<a href="index.html"><img src="assets/parkcrest-properties-logo.png" class="nav-logo-img"></a>
-<div class="nav-menu">
-<div class="dropdown">
-<button class="dropdown-btn" type="button">Select Company ▼</button>
-<div class="dropdown-content">
-<a href="andys-xpress-wash.html">Andy's Xpress Wash</a>
-<a href="ampm.html">AMPM</a>
-<a href="archibalds.html">Archibald's</a>
-<a href="parkcrest-properties.html">Parkcrest Properties</a>
-</div>
-</div>
-<a href="contact-form-ampm.html" class="contact-btn">Contact Form</a>
-</div>
-</div>
-</nav>
-
-<div class="content-container">
-<h1 class="form-title">Contact Form</h1>
-<p class="form-subtitle">AMPM</p>
-
-<div class="form-card">
-<form action="https://formspree.io/f/mwvqgkgj" method="POST">
-<label>Company</label>
-<select name="company" required>
-<option>AMPM</option>
-<option>AMPM</option>
-<option>Archibald's</option>
-<option>Andy's Xpress Wash</option>
-<option>Parkcrest Properties</option>
-</select>
-
-<div class="form-row">
-    <div>
-        <label>Email</label>
-        <input type="email" name="email" placeholder="Email address">
-    </div>
-    <div>
-        <label>Phone</label>
-        <input type="tel" name="phone" placeholder="Phone number">
-    </div>
-</div>
-
-<div>
-    <label>Name</label>
-    <input type="text" name="name" required>
-</div>
-
-<label>Subject</label>
-<input type="text" name="subject" required>
-
-<label>Message</label>
-<textarea name="message" required></textarea>
-
-<label>Priority</label>
-<select name="priority" required>
-<option>Low</option>
-<option>Medium</option>
-<option>High</option>
-</select>
-
-<label>Would you like a corporate representative to follow up?</label>
-<div class="radio-group">
-<label class="radio-item"><input type="radio" name="follow_up" value="Yes" required> Yes, please follow up</label>
-<label class="radio-item"><input type="radio" name="follow_up" value="No" required> No, this is an anonymous submission</label>
-</div>
-
-<button class="submit-btn" type="submit">Send</button>
-</form>
-</div>
-
-<a href="ampm.html" class="back-btn">← Back</a>
-</div>
-
-<script>
-document.addEventListener("DOMContentLoaded",function(){
-const d=document.querySelector(".dropdown");
-const b=document.querySelector(".dropdown-btn");
-b.addEventListener("click",e=>{e.stopPropagation();d.classList.toggle("open")});
-document.addEventListener("click",()=>d.classList.remove("open"));
-});
-</script>
-
+<header class="topbar"><div class="topbar-inner"><a href="index.html"><img src="assets/parkcrest-properties-logo.png" alt="Parkcrest Properties" class="logo-img"></a><nav class="topnav" aria-label="Company navigation"><a href="andys-xpress-wash.html">Andy's Xpress Wash</a><a href="ampm.html" aria-current="page">AMPM</a><a href="archibalds.html">Archibald's</a><a href="parkcrest-properties.html">Parkcrest Properties</a><a href="index.html">Portal Home</a></nav></div></header>
+<main class="page-shell">
+<section class="hero" aria-labelledby="page-title"><div><div class="eyebrow">AMPM</div><h1 id="page-title">Contact Form</h1><p class="subtitle">Review the resources below or contact your manager for help.</p></div><p class="portal-note">This form is for messages only. Do not submit documents, medical records, Social Security numbers, or other sensitive files through the public portal.</p></section>
+<section class="form-card"><h2>Message Details</h2><form action="https://formspree.io/f/mwvqgkgj" method="POST"><div><label for="company">Company</label><select id="company" name="company" required><option value="Andy's Xpress Wash">Andy's Xpress Wash</option><option value="AMPM" selected>AMPM</option><option value="Archibald's">Archibald's</option><option value="Parkcrest Properties">Parkcrest Properties</option></select></div><div class="form-row"><div><label for="name">Name</label><input id="name" type="text" name="name" required></div><div><label for="email">Email</label><input id="email" type="email" name="email" placeholder="Email address"></div></div><div class="form-row"><div><label for="phone">Phone</label><input id="phone" type="tel" name="phone" placeholder="Phone number"></div><div><label for="priority">Priority</label><select id="priority" name="priority" required><option>Low</option><option>Medium</option><option>High</option></select></div></div><div><label for="subject">Subject</label><input id="subject" type="text" name="subject" required></div><div><label for="message">Message</label><textarea id="message" name="message" required></textarea></div><div><label>Would you like a corporate representative to follow up?</label><div class="radio-group"><label class="radio-item"><input type="radio" name="follow_up" value="Yes" required> Yes, please follow up</label><label class="radio-item"><input type="radio" name="follow_up" value="No" required> No, this is an anonymous submission</label></div></div><button class="submit-btn" type="submit">Send Message</button></form></section><p style="margin-top:1rem"><a href="ampm.html" class="back-link">Back to AMPM Resources</a></p>
+</main>
 </body>
 </html>

@@ -148,6 +148,17 @@ body {
   margin-bottom: 3rem;
 }
 
+.portal-note {
+  max-width: 760px;
+  margin: 0 auto 2rem;
+  padding: 1rem 1.25rem;
+  color: #42513a;
+  background-color: #ffffff;
+  border-left: 5px solid #2d5016;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
 /* =========================
    GRID / CARDS - HOMEPAGE & RESOURCES
    ========================= */
@@ -198,6 +209,28 @@ body {
 .company-card p {
   font-size: 1rem;
   color: #666;
+}
+
+.resource-list {
+  display: grid;
+  gap: 0.75rem;
+  list-style: none;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(45, 80, 22, 0.45);
+  outline-offset: 3px;
 }
 
 /* =========================
