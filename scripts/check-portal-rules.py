@@ -68,6 +68,7 @@ def main():
         "benefits-parkcrest.html": 1,
         "tax-labor-parkcrest.html": 1,
         "incident-report.html": 4,
+        "champ-plan.html": 1,
     }
 
     for href, count in required_homepage_links.items():
