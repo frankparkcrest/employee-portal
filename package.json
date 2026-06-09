@@ -1,0 +1,45 @@
+{
+  "name": "employee-portal",
+  "version": "1.0.0",
+  "description": "Public employee resource portal for Parkcrest Properties and related companies.",
+  "private": true,
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build && node scripts/copy-static-assets.mjs",
+    "preview": "vite preview --host 0.0.0.0",
+    "test": "vitest run",
+    "check:links": "python3 scripts/check-links.py",
+    "check:portal": "python3 scripts/check-portal-rules.py"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/frankparkcrest/employee-portal.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/frankparkcrest/employee-portal/issues"
+  },
+  "homepage": "https://github.com/frankparkcrest/employee-portal#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.2",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "typescript": "^6.0.3",
+    "vite": "^8.0.16"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "jsdom": "^29.1.1",
+    "vitest": "^4.1.8"
+  }
+}
